@@ -1,30 +1,30 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { VARIANT } from "../../constants"
+import { VARIANT } from "../../constants";
 import { Button } from "./index";
 
 const meta: Meta<typeof Button> = {
-    title: "Components/Button",
-    component: Button,
-    args: {
-        children: 'Button',
-        variant: VARIANT.PRIMARY
+  title: "Components/Button",
+  component: Button,
+  args: {
+    children: "Button",
+    variant: VARIANT.PRIMARY,
+  },
+  argTypes: {
+    variant: {
+      options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
+      control: { type: "inline-radio" },
     },
-    argTypes: {
-        variant: {
-            options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
-            control: {type: 'inline-radio'},
-        }
-    }
-}
+  },
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {}
+export const Primary: Story = {};
 
 export const Secondary: Story = {
-    args: {
-        variant: 'secondary'
-    }
-}
+  args: {
+    variant: "secondary",
+  },
+};

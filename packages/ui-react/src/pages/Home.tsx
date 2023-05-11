@@ -1,16 +1,18 @@
-import {Header, Hero, Listing} from '../components'
+import { Header, Hero, Listing } from "../components";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
-    const {t}= useTranslation()
+  const { t } = useTranslation();
 
-    return <>
-        <Header/>
+  return (
+    <>
+      <Header />
 
-        <Hero/>
+      <Hero />
 
-        <Listing title={t("List View")} />
+      <Listing title={t("List View")} />
     </>
-}
+  );
+};
 
 export default Home;

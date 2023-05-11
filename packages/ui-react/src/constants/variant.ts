@@ -1,6 +1,7 @@
 const PRIMARY = "primary";
-const SECONDARY = "secondary"
+const SECONDARY = "secondary";
 
 export default {
-    PRIMARY, SECONDARY
-}
+  PRIMARY,
+  SECONDARY,
+};

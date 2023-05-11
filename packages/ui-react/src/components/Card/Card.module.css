@@ -1,5 +1,5 @@
 .card-wrapper {
-    @apply flex flex-col
+  @apply flex flex-col
     rounded-md
     /*w-32 h-full*/
     max-w-xs h-full
@@ -9,7 +9,7 @@
 }
 
 .card-detail__wrapper {
-    @apply flex flex-col gap-2
+  @apply flex flex-col gap-2
     p-4;
 }
 
@@ -19,34 +19,30 @@
 /*}*/
 
 .card-detail__name {
-    @apply
-    text-sm
+  @apply text-sm
     font-black
     text-ellipsis whitespace-nowrap overflow-hidden;
 }
 
 .card-detail__price {
-    @apply
-    text-xs
-    text-neutral-600 dark:text-neutral-400
+  @apply text-xs
+    text-neutral-600 dark:text-neutral-400;
 }
 
 .card-detail__end {
-
 }
 
 .card-detail__meta {
-    @apply flex gap-0.5
+  @apply flex gap-0.5
     items-center
     text-xs
-    text-neutral-600 dark:text-neutral-400 ;
+    text-neutral-600 dark:text-neutral-400;
 }
 
 .card-detail__location {
-    @apply
-    text-ellipsis whitespace-nowrap overflow-hidden;
+  @apply text-ellipsis whitespace-nowrap overflow-hidden;
 }
 
 .card-detail__touring {
-    @apply rtl:text-end text-xs text-neutral-900 dark:text-neutral-100;
+  @apply rtl:text-end text-xs text-neutral-900 dark:text-neutral-100;
 }

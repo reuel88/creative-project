@@ -1,10 +1,11 @@
-import { AuthLayout, Header} from '../components';
+import { AuthLayout, Header } from "../components";
 
 const SignOut = () => {
-    return <AuthLayout>
-        <Header/>
-
+  return (
+    <AuthLayout>
+      <Header />
     </AuthLayout>
-}
+  );
+};
 
 export default SignOut;

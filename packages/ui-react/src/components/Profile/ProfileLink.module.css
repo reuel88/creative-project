@@ -1,5 +1,5 @@
 .profile-link {
-    @apply relative
+  @apply relative
     flex items-center justify-center gap-2
     border-[1px] border-solid border-transparent
     rounded-md
@@ -10,16 +10,16 @@
 }
 
 .profile-link:hover {
-    @apply text-neutral-900 dark:text-neutral-100 border-blue-500;
+  @apply text-neutral-900 dark:text-neutral-100 border-blue-500;
 }
 
 .profile-link:focus,
 .profile-link:focus-visible {
-    @apply outline outline-offset-2 outline-1 outline-blue-500;
+  @apply outline outline-offset-2 outline-1 outline-blue-500;
 }
 
 .profile-link__text {
-    @apply h-0 w-0
+  @apply h-0 w-0
     absolute
-    overflow-hidden
+    overflow-hidden;
 }

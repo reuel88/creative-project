@@ -1,34 +1,33 @@
-
 .link:focus-visible {
-    @apply rounded-md
+  @apply rounded-md
     outline outline-offset-2 outline-2;
 }
 
 .primary {
-    @apply text-blue-600 dark:text-blue-400
-    underline
+  @apply text-blue-600 dark:text-blue-400
+    underline;
 }
 
 .primary:hover {
-    @apply text-blue-700 dark:text-blue-500
-    no-underline
+  @apply text-blue-700 dark:text-blue-500
+    no-underline;
 }
 
 .primary:focus-visible {
-    @apply outline-blue-500 no-underline;
+  @apply outline-blue-500 no-underline;
 }
 
 .secondary {
-    @apply text-neutral-100 underline;
+  @apply text-neutral-100 underline;
 }
 
 .secondary:hover {
-    @apply text-neutral-100 no-underline
+  @apply text-neutral-100 no-underline
     rounded-md
     outline outline-offset-2 outline-2 outline-neutral-100;
 }
 
 .secondary:focus-visible {
-    @apply no-underline
+  @apply no-underline
     outline-neutral-100;
 }

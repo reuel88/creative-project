@@ -1,27 +1,27 @@
 .input-template__wrapper {
-    @apply flex grow
+  @apply flex grow
     rounded-md;
 }
 
 .input-template__wrapper:focus,
-.input-template__wrapper:focus-within{
-    @apply outline outline-offset-4 outline-2;
+.input-template__wrapper:focus-within {
+  @apply outline outline-offset-4 outline-2;
 }
 
-.input-template__wrapper > *:first-child{
-    @apply  border-solid
+.input-template__wrapper > *:first-child {
+  @apply border-solid
     ltr:border-l-[1px] rtl:border-r-[1px]
     ltr:rounded-l-md rtl:rounded-r-md;
 }
 
-.input-template__wrapper > *:last-child{
-    @apply  border-solid
+.input-template__wrapper > *:last-child {
+  @apply border-solid
     ltr:border-r-[1px] rtl:border-l-[1px]
     ltr:rounded-r-md rtl:rounded-l-md;
 }
 
-.input-template__wrapper--left{
-    @apply flex items-center justify-center
+.input-template__wrapper--left {
+  @apply flex items-center justify-center
     p-3 ltr:pr-0 rtl:pl-0
     bg-neutral-100
     border-y-[1px] border-solid
@@ -31,7 +31,7 @@
 }
 
 .input-template__wrapper--middle {
-    @apply relative
+  @apply relative
     flex grow gap-2
     pb-2 pt-5 px-3
     bg-neutral-100
@@ -41,8 +41,8 @@
     text-sm;
 }
 
-.input-template__wrapper--right{
-    @apply flex items-center justify-center
+.input-template__wrapper--right {
+  @apply flex items-center justify-center
     p-3 ltr:pl-0 rtl:pr-0
     bg-neutral-100
     border-y-[1px] border-solid
@@ -51,22 +51,20 @@
     text-sm;
 }
 
-
-.input-template__wrapper.primary:hover{
-    @apply border-blue-500;
+.input-template__wrapper.primary:hover {
+  @apply border-blue-500;
 }
 
 .input-template__wrapper.primary:focus,
-.input-template__wrapper.primary:focus-within{
-    @apply outline-blue-500;
+.input-template__wrapper.primary:focus-within {
+  @apply outline-blue-500;
 }
 
-.input-template__wrapper.secondary:hover{
-    @apply border-neutral-100;
+.input-template__wrapper.secondary:hover {
+  @apply border-neutral-100;
 }
 
 .input-template__wrapper.secondary:focus,
-.input-template__wrapper.secondary:focus-within{
-    @apply outline-neutral-100;
+.input-template__wrapper.secondary:focus-within {
+  @apply outline-neutral-100;
 }
-

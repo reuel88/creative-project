@@ -1,5 +1,5 @@
 .search-modal__wrapper {
-    @apply fixed
+  @apply fixed
     top-0 left-0
     w-full h-screen
     bg-neutral-100 dark:bg-neutral-900
@@ -7,34 +7,33 @@
 }
 
 .search-modal {
-    @apply grid grid-cols-1 grid-rows-[2.75rem_1fr]
+  @apply grid grid-cols-1 grid-rows-[2.75rem_1fr]
     text-neutral-900 dark:text-neutral-100
     h-screen;
 }
 
-.search-modal__header-wrapper{
-    @apply bg-neutral-100 dark:bg-neutral-900
+.search-modal__header-wrapper {
+  @apply bg-neutral-100 dark:bg-neutral-900
     drop-shadow-md;
 }
 
 .search-modal__header {
-    @apply flex items-center
+  @apply flex items-center
     mx-auto
     w-full max-w-sm md:max-w-xl lg:max-w-7xl;
 }
 
 .search-modal__header-section--end {
-    @apply h-full w-full;
+  @apply h-full w-full;
 }
 
 .search-form {
-    @apply flex
+  @apply flex
     h-full w-full;
 }
 
 .search-form__input {
-    @apply
-    block
+  @apply block
     text-neutral-900 dark:text-neutral-100
     border-[1px] border-solid border-transparent
     bg-transparent
@@ -44,12 +43,11 @@
 
 .search-form__input:focus,
 .search-form__input:focus-visible {
-    @apply outline-none;
+  @apply outline-none;
 }
 
 .search-form__button {
-    @apply
-    relative
+  @apply relative
     flex items-center justify-center gap-2
     bg-blue-600
     border-[1px] border-solid border-transparent
@@ -61,36 +59,35 @@
 }
 
 .search-form__button:hover {
-    @apply bg-blue-700
+  @apply bg-blue-700;
 }
 
 .search-form__button:focus,
 .search-form__button:focus-visible {
-    @apply
-    bg-blue-900
+  @apply bg-blue-900
     outline-none;
 }
 
-.search-form__button__text{
-    @apply h-0 w-0
+.search-form__button__text {
+  @apply h-0 w-0
     absolute
-    overflow-hidden
+    overflow-hidden;
 }
 
 .search-modal__content {
-    @apply h-full overflow-y-scroll;
+  @apply h-full overflow-y-scroll;
 }
 
 .search-modal__content::-webkit-scrollbar {
-    @apply h-0 w-0 bg-transparent;
+  @apply h-0 w-0 bg-transparent;
 }
 
-.search-modal__result-list{
-    @apply py-4
+.search-modal__result-list {
+  @apply py-4
     mx-auto
     w-full max-w-sm md:max-w-xl lg:max-w-7xl;
 }
 
-.search-modal__result-list__item{
-    @apply px-4 mb-4
+.search-modal__result-list__item {
+  @apply px-4 mb-4;
 }

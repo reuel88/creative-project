@@ -1,5 +1,5 @@
-.logo-link{
-    @apply flex items-center justify-center
+.logo-link {
+  @apply flex items-center justify-center
     border-[1px] border-solid border-transparent
     rounded-md
     box-border
@@ -8,11 +8,11 @@
     transition-[border-color] transition-[outline] duration-75;
 }
 
-.logo-link:hover{
-    @apply text-neutral-900 dark:text-neutral-100 border-blue-500;
+.logo-link:hover {
+  @apply text-neutral-900 dark:text-neutral-100 border-blue-500;
 }
 
 .logo-link:focus,
-.logo-link:focus-visible{
-    @apply outline outline-offset-2 outline-1 outline-blue-500;
+.logo-link:focus-visible {
+  @apply outline outline-offset-2 outline-1 outline-blue-500;
 }

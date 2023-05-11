@@ -1,34 +1,33 @@
 .card-carousel__wrapper {
-    @apply flex
+  @apply flex
     snap-x
     overflow-y-scroll;
 }
 
 .card-carousel__wrapper::-webkit-scrollbar {
-    @apply h-0 w-0 bg-transparent;
+  @apply h-0 w-0 bg-transparent;
 }
 
-.card-carousel__wrapper:focus{
-    @apply outline outline-offset-4 outline-2 outline-blue-500;
+.card-carousel__wrapper:focus {
+  @apply outline outline-offset-4 outline-2 outline-blue-500;
 }
 
 .card-carousel__content {
-    @apply inline-flex snap-start;
+  @apply inline-flex snap-start;
 }
 
 .card-carousel__item {
-    @apply relative overflow-hidden
+  @apply relative overflow-hidden
     aspect-[3/4]
     /*w-32 h-44*/
     /*h-32 w-44*/
-    snap-start
-    ;
+    snap-start;
 }
 
 .card-carousel__img {
-    @apply absolute
+  @apply absolute
     top-0 left-0
     w-full h-full
     object-cover
-    object-center
+    object-center;
 }

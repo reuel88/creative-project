@@ -1,1 +1,1 @@
-export {default as withColorScheme} from "./withColorScheme.jsx"
+export { default as withColorScheme } from "./withColorScheme.jsx";

@@ -1,53 +1,64 @@
-import { ComponentType, createContext, FC, PropsWithChildren, useContext, useEffect, useState } from "react";
+import {
+  ComponentType,
+  createContext,
+  FC,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const ColorSchemeContext = createContext({});
 
 export const useColorScheme = () => {
-    return useContext(ColorSchemeContext);
-}
+  return useContext(ColorSchemeContext);
+};
 
-export const ColorSchemeProvider:FC<PropsWithChildren> = ({children}) => {
-    const [scheme, setScheme] = useState("light")
+export const ColorSchemeProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [scheme, setScheme] = useState("light");
 
-    useEffect(() => {
-        const root = document.querySelector("html");
+  useEffect(() => {
+    const root = document.querySelector("html");
 
-        if (root) {
-            if (scheme === 'light') {
-                root.classList.add("light");
-                root.classList.remove("dark");
-            } else {
-                root.classList.add("dark");
-                root.classList.remove("light");
-            }
-        }
-
-    }, [scheme]);
-
-    const toggleScheme = () => {
-        setScheme(scheme => scheme === 'light' ? 'dark' : 'light')
+    if (root) {
+      if (scheme === "light") {
+        root.classList.add("light");
+        root.classList.remove("dark");
+      } else {
+        root.classList.add("dark");
+        root.classList.remove("light");
+      }
     }
+  }, [scheme]);
 
-    const context = {
-        scheme,
-        toggleScheme
-    }
+  const toggleScheme = () => {
+    setScheme((scheme) => (scheme === "light" ? "dark" : "light"));
+  };
 
-    return (<ColorSchemeContext.Provider value={context}>
-        {children}
-    </ColorSchemeContext.Provider>);
-}
+  const context = {
+    scheme,
+    toggleScheme,
+  };
+
+  return (
+    <ColorSchemeContext.Provider value={context}>
+      {children}
+    </ColorSchemeContext.Provider>
+  );
+};
 
 type Props = {
-    [key: string]: unknown;
+  [key: string]: unknown;
 };
 
-export const withColorScheme = <P extends Props>(Component: ComponentType<P>) => (props: P) => {
+export const withColorScheme =
+  <P extends Props>(Component: ComponentType<P>) =>
+  (props: P) => {
     return (
-        <ColorSchemeProvider>
-            <Component {...props} />
-        </ColorSchemeProvider>
+      <ColorSchemeProvider>
+        <Component {...props} />
+      </ColorSchemeProvider>
     );
-};
+  };
 
 export default ColorSchemeContext;

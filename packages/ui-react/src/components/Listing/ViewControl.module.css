@@ -1,15 +1,14 @@
-.view-control{
-    @apply flex gap-1 items-center
+.view-control {
+  @apply flex gap-1 items-center
     text-neutral-500 dark:text-neutral-100;
 }
 
-.view-control__label{
-    @apply pl-1 hidden md:inline-block;
+.view-control__label {
+  @apply pl-1 hidden md:inline-block;
 }
 
 .view-control__button {
-    @apply
-    relative
+  @apply relative
     flex items-center justify-center gap-2
     border-[1px] border-solid border-transparent
     rounded-md
@@ -21,16 +20,16 @@
 
 .view-control__button:hover,
 .view-control__button--active {
-    @apply border-blue-500;
+  @apply border-blue-500;
 }
 
 .view-control__button:focus,
 .view-control__button:focus-visible {
-    @apply outline outline-offset-2 outline-1 outline-blue-500;
+  @apply outline outline-offset-2 outline-1 outline-blue-500;
 }
 
-.view-control__button__text{
-    @apply h-0 w-0
+.view-control__button__text {
+  @apply h-0 w-0
     absolute
-    overflow-hidden
+    overflow-hidden;
 }

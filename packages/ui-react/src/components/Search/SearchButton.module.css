@@ -1,6 +1,5 @@
-.search-button{
-    @apply
-    relative
+.search-button {
+  @apply relative
     flex items-center justify-center  gap-2
     border-[1px] border-solid border-transparent
     rounded-md
@@ -10,17 +9,17 @@
     transition-[border-color] transition-[outline] duration-75;
 }
 
-.search-button:hover{
-    @apply text-neutral-900 dark:text-neutral-100 border-blue-500;
+.search-button:hover {
+  @apply text-neutral-900 dark:text-neutral-100 border-blue-500;
 }
 
 .search-button:focus,
-.search-button:focus-visible{
-    @apply outline outline-offset-2 outline-1 outline-blue-500;
+.search-button:focus-visible {
+  @apply outline outline-offset-2 outline-1 outline-blue-500;
 }
 
 .search-button__text {
-    @apply h-0 w-0
+  @apply h-0 w-0
     absolute
-    overflow-hidden
+    overflow-hidden;
 }

@@ -1,11 +1,13 @@
-import { AuthLayout, Header, SignUpForm} from '../components';
+import { AuthLayout, Header, SignUpForm } from "../components";
 
 const SignUp = () => {
-    return <AuthLayout>
-        <Header/>
+  return (
+    <AuthLayout>
+      <Header />
 
-        <SignUpForm/>
+      <SignUpForm />
     </AuthLayout>
-}
+  );
+};
 
 export default SignUp;

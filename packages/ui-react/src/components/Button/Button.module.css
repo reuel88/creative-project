@@ -1,9 +1,8 @@
 .button,
-.button[type='button'],
-.button[type='reset'],
-.button[type='submit'] {
-    @apply
-    border-[1px] border-solid border-transparent
+.button[type="button"],
+.button[type="reset"],
+.button[type="submit"] {
+  @apply border-[1px] border-solid border-transparent
     rounded-md
     px-5 py-2.5
     text-sm
@@ -13,53 +12,53 @@
 }
 
 .button:focus,
-.button[type='button']:focus,
-.button[type='reset']:focus,
-.button[type='submit']:focus {
-    @apply outline outline-offset-4 outline-2;
+.button[type="button"]:focus,
+.button[type="reset"]:focus,
+.button[type="submit"]:focus {
+  @apply outline outline-offset-4 outline-2;
 }
 
 .primary,
-.primary[type='button'],
-.primary[type='reset'],
-.primary[type='submit'] {
-    @apply bg-blue-600
-    text-neutral-100
+.primary[type="button"],
+.primary[type="reset"],
+.primary[type="submit"] {
+  @apply bg-blue-600
+    text-neutral-100;
 }
 
 .primary:hover,
-.primary[type='button']:hover,
-.primary[type='reset']:hover,
-.primary[type='submit']:hover {
-    @apply bg-blue-700;
+.primary[type="button"]:hover,
+.primary[type="reset"]:hover,
+.primary[type="submit"]:hover {
+  @apply bg-blue-700;
 }
 
 .primary:focus,
-.primary[type='button']:focus,
-.primary[type='reset']:focus,
-.primary[type='submit']:focus {
-    @apply outline-blue-500;
+.primary[type="button"]:focus,
+.primary[type="reset"]:focus,
+.primary[type="submit"]:focus {
+  @apply outline-blue-500;
 }
 
 .secondary,
-.secondary[type='button'],
-.secondary[type='reset'],
-.secondary[type='submit'] {
-    @apply bg-blue-800
-    text-neutral-100
+.secondary[type="button"],
+.secondary[type="reset"],
+.secondary[type="submit"] {
+  @apply bg-blue-800
+    text-neutral-100;
 }
 
 .secondary:hover,
-.secondary[type='button']:hover,
-.secondary[type='reset']:hover,
-.secondary[type='submit']:hover {
-    @apply  bg-blue-900
+.secondary[type="button"]:hover,
+.secondary[type="reset"]:hover,
+.secondary[type="submit"]:hover {
+  @apply bg-blue-900
     text-neutral-100;
 }
 
 .secondary:focus,
-.secondary[type='button']:focus,
-.secondary[type='reset']:focus,
-.secondary[type='submit']:focus {
-    @apply outline-neutral-100;
+.secondary[type="button"]:focus,
+.secondary[type="reset"]:focus,
+.secondary[type="submit"]:focus {
+  @apply outline-neutral-100;
 }

@@ -1,1 +1,1 @@
-export {default as VARIANT} from './variant'
+export { default as VARIANT } from "./variant";

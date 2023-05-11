@@ -1,16 +1,14 @@
-
 .input {
-    @apply
-    text-neutral-900
+  @apply text-neutral-900
     bg-transparent
     w-full;
 }
 
 .input::-ms-reveal {
-    display: none;
+  display: none;
 }
 
 .input:focus,
-.input:focus-visible{
-    @apply outline-none;
+.input:focus-visible {
+  @apply outline-none;
 }

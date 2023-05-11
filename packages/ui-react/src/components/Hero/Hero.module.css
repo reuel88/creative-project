@@ -1,37 +1,37 @@
-.hero{
-    @apply flex items-center justify-center
+.hero {
+  @apply flex items-center justify-center
     bg-gradient-to-r from-pink-300 to-blue-300
     h-24 mb-12;
 }
 
 .hero-form {
-    @apply flex translate-y-12 w-full px-4
+  @apply flex translate-y-12 w-full px-4
     mx-auto
     max-w-sm md:max-w-xl lg:max-w-4xl;
 }
 
-.search-input{
-    @apply flex rounded-md w-full;
+.search-input {
+  @apply flex rounded-md w-full;
 }
 
 .search-input:focus,
-.search-input:focus-within{
-    @apply outline outline-offset-4 outline-2 outline-blue-500;
+.search-input:focus-within {
+  @apply outline outline-offset-4 outline-2 outline-blue-500;
 }
 
-.button{
-    @apply relative
+.button {
+  @apply relative
     flex items-center justify-center gap-2
-    ltr:border-l-0 ltr:rounded-l-none rtl:border-r-0 rtl:rounded-r-none
+    ltr:border-l-0 ltr:rounded-l-none rtl:border-r-0 rtl:rounded-r-none;
 }
 
 .button:focus,
-.button:focus-within{
-    @apply outline  outline-0 outline-transparent;
+.button:focus-within {
+  @apply outline  outline-0 outline-transparent;
 }
 
 .button__text {
-    @apply h-0 w-0
+  @apply h-0 w-0
     absolute
-    overflow-hidden
+    overflow-hidden;
 }
