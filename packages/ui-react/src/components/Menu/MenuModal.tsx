@@ -13,7 +13,7 @@ const MenuModal = () => {
         <div className={styles["menu-modal__header-wrapper"]}>
           <header className={styles["menu-modal__header"]}>
             <div className={styles["menu-modal__header-section--start"]}>
-              <BackButton />
+              <BackButton href={"/"} />
             </div>
             <div className={styles["menu-modal__header-section--end"]}>
               <button className={styles["close-button"]}>

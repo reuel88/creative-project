@@ -24,7 +24,7 @@ const SearchModal = () => {
         <div className={styles["search-modal__header-wrapper"]}>
           <header className={styles["search-modal__header"]}>
             <div className={headerSectionStart}>
-              <BackButton />
+              <BackButton href={"/"} />
             </div>
             <div className={headerSectionEnd}>
               <form className={styles["search-form"]}>

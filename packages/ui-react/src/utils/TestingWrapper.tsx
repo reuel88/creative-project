@@ -1,7 +1,17 @@
 import i18n from "i18next";
 import { I18nextProvider } from "react-i18next";
+import { FC, PropsWithChildren } from "react";
 
-const TestingWrapper = ({ children, translations }) => {
+interface TestingWrapperProps extends PropsWithChildren {
+  translations?: {
+    [key: string]: string;
+  };
+}
+
+const TestingWrapper: FC<TestingWrapperProps> = ({
+  children,
+  translations,
+}) => {
   i18n.init({
     lng: "en",
     fallbackLng: "en",

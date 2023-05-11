@@ -5,16 +5,13 @@ import { useTranslation } from "react-i18next";
 import styles from "./SearchButton.module.css";
 
 interface SearchButtonProps {
-  onClick: MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const SearchButton: ComponentType<SearchButtonProps> = ({
-  onClick,
-  ...rest
-}) => {
+const SearchButton: ComponentType<SearchButtonProps> = ({ ...rest }) => {
   const { t } = useTranslation();
   return (
-    <button className={styles["search-button"]} onClick={onClick} {...rest}>
+    <button className={styles["search-button"]} {...rest}>
       <FontAwesomeIcon icon={faMagnifyingGlass} />
       <span className={styles["search-button__text"]}>{t("Search")}</span>
     </button>
