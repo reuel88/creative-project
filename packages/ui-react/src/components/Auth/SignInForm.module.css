@@ -22,7 +22,7 @@
 .form__header{
     @apply flex flex-col gap-4
     px-4 md:p-16 md:pb-0
-    text-neutral-500;
+    text-neutral-600 dark:text-neutral-400;
 }
 
 .form__heading {
@@ -40,7 +40,7 @@
 
 .form__footer{
     @apply flex flex-col gap-4
-    text-neutral-500
+    text-neutral-600 dark:text-neutral-400
     p-4 md:px-16 md:py-8
     border-t-[1px] border-solid border-t-neutral-300 dark:border-t-neutral-700
 }

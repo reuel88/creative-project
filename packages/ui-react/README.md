@@ -45,3 +45,9 @@
 # Testing
 
 Testing was setup using this article https://hung.dev/posts/jest-vite. Please refer back to it when having trouble
+
+---
+
+# Updating
+
+Using `npm-check` to manage the packages. https://www.npmjs.com/package/npm-check

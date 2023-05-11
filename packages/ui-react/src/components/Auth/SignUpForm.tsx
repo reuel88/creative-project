@@ -1,5 +1,5 @@
 import { useTranslation, Trans } from "react-i18next";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { InputEmail, InputPasswordWithRequirements } from '../Form';
 import { Button } from '../Button';
 import { Link } from "../Link";
@@ -19,9 +19,13 @@ const SignUpForm = () => {
         setPassword(e.target.value)
     }
 
+    const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    }
+
     return <section className={styles["form__wrapper"]}>
         <div className={styles["form__container"]}>
-            <form className={styles["form"]}>
+            <form className={styles["form"]} onSubmit={handleSubmit}>
                 <header className={styles["form__header"]}>
                     <h1 className={styles["form__heading"]}>{t("Sign up to Classified")}</h1>
                     <p>

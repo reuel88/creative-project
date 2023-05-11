@@ -3,7 +3,10 @@ import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof BackButton> = {
     title: "Components/Back Button",
-    component: BackButton
+    component: BackButton,
+    args:{
+        href: '/'
+    }
 }
 
 export default meta

@@ -3,7 +3,10 @@ import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ProfileLink> = {
     title: "Components/Profile/Profile Link",
-    component: ProfileLink
+    component: ProfileLink,
+    args: {
+        href: '/'
+    }
 }
 
 export default meta;

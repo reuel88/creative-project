@@ -28,7 +28,7 @@
 .card-detail__price {
     @apply
     text-xs
-    text-neutral-500 dark:text-neutral-500
+    text-neutral-600 dark:text-neutral-400
 }
 
 .card-detail__end {
@@ -39,7 +39,7 @@
     @apply flex gap-0.5
     items-center
     text-xs
-    text-neutral-500 ;
+    text-neutral-600 dark:text-neutral-400 ;
 }
 
 .card-detail__location {
