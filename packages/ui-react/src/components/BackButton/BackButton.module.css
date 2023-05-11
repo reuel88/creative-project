@@ -1,0 +1,32 @@
+.back-button {
+    @apply relative
+    flex items-center justify-center gap-2
+    text-neutral-900 dark:text-neutral-100
+    text-base font-medium
+    px-3.5 py-2.5
+    w-11 h-11;
+}
+
+.back-button:hover {
+    @apply text-blue-500
+}
+
+
+.back-button:focus-visible {
+    @apply text-blue-500
+    outline-none;
+}
+
+.back-button--left-icon {
+    @apply ltr:inline-block rtl:hidden;
+}
+
+.back-button--right-icon {
+    @apply rtl:inline-block ltr:hidden;
+}
+
+.back-button__text {
+    @apply h-0 w-0
+    absolute
+    overflow-hidden
+}

@@ -1,0 +1,52 @@
+.card-wrapper {
+    @apply flex flex-col
+    rounded-md
+    /*w-32 h-full*/
+    max-w-xs h-full
+    /*w-44 h-full*/
+    text-neutral-900 dark:text-neutral-100
+    bg-neutral-200 dark:bg-neutral-800;
+}
+
+.card-detail__wrapper {
+    @apply flex flex-col gap-2
+    p-4;
+}
+
+/*.card-detail__start {*/
+/*    @apply flex flex-wrap flex gap-x-2*/
+/*    items-center;*/
+/*}*/
+
+.card-detail__name {
+    @apply
+    text-sm
+    font-black
+    text-ellipsis whitespace-nowrap overflow-hidden;
+}
+
+.card-detail__price {
+    @apply
+    text-xs
+    text-neutral-500 dark:text-neutral-500
+}
+
+.card-detail__end {
+
+}
+
+.card-detail__meta {
+    @apply flex gap-0.5
+    items-center
+    text-xs
+    text-neutral-500 ;
+}
+
+.card-detail__location {
+    @apply
+    text-ellipsis whitespace-nowrap overflow-hidden;
+}
+
+.card-detail__touring {
+    @apply rtl:text-end text-xs text-neutral-900 dark:text-neutral-100;
+}

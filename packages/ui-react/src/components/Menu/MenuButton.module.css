@@ -1,0 +1,26 @@
+.menu-button{
+    @apply
+    relative
+    flex items-center justify-center gap-2
+    border-[1px] border-solid border-transparent
+    rounded-md
+    box-border
+    p-4 w-12 h-12
+    text-neutral-900 dark:text-neutral-100 bg-transparent
+    transition-[border-color] transition-[outline] duration-75;
+}
+
+.menu-button:hover{
+    @apply text-neutral-900 dark:text-neutral-100 border-blue-500;
+}
+
+.menu-button:focus,
+.menu-button:focus-visible{
+    @apply outline outline-offset-2 outline-1 outline-blue-500;
+}
+
+.menu-button__text {
+    @apply h-0 w-0
+    absolute
+    overflow-hidden
+}
