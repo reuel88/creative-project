@@ -8,6 +8,14 @@ module.exports = {
   collectCoverage: true,
   coverageReporters: ["json", "lcov", "text", "html"],
   coveragePathIgnorePatterns: [".stories.tsx", ".stories.ts"],
+  coverageThreshold: {
+    global: {
+      statements: 30,
+      branches: 10,
+      functions: 10,
+      lines: 20,
+    },
+  },
   setupFilesAfterEnv: ["./config/jest/setupTests.cjs"],
   testEnvironment: "jsdom",
   modulePaths: ["<rootDir>/src"],
