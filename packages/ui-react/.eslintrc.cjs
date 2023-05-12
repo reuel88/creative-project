@@ -16,9 +16,5 @@ module.exports = {
     sourceType: "module",
   },
   plugins: [],
-  rules: {
-    "sort-imports": {
-      ignoreDeclarationSort: true,
-    },
-  },
+  rules: {},
 };

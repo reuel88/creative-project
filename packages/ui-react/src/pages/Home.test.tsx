@@ -1,12 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import TestingWrapper from "../utils/TestingWrapper";
 import Home from "./Home";
+import { FC } from "react";
 
 jest.mock("../components", () => {
   return {
     Header: () => <div>Header</div>,
     Hero: () => <div>Hero</div>,
     Listing: ({ title }) => <div>{title}</div>,
+  } as {
+    Header: FC;
+    Hero: FC;
+    Listing: FC<{ title: string }>;
   };
 });
 

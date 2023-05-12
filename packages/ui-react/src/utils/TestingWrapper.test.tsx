@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { render, screen } from "@testing-library/react";
 import TestingWrapper from "./TestingWrapper";
+import { FC, PropsWithChildren } from "react";
 
 jest.mock("react-i18next", () => {
   return {
     I18nextProvider: ({ children }) => {
       return <>{children}</>;
     },
-  };
+  } as { I18nextProvider: FC<PropsWithChildren> };
 });
 
 describe("<TestWrapper />", () => {
