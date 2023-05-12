@@ -31,8 +31,8 @@ const Hero = () => {
         <div className={styles["search-input"]}>
           <InputText
             id={"location_postcode"}
-            rightComponent={RightComponent}
             label={t("Location or Postcode")}
+            rightComponent={RightComponent}
             value={value}
             onChange={handleChange}
           />

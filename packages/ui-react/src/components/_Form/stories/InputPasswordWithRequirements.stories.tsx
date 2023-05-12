@@ -1,4 +1,4 @@
-import { InputPasswordWithRequirements } from "../index";
+import { InputPasswordWithRequirementsOld } from "../index";
 import { Meta, StoryObj } from "@storybook/react";
 import { ChangeEvent, FC, useState } from "react";
 import { IInputProps } from "../_InputContext";
@@ -18,7 +18,7 @@ const InputPasswordWithRequirementsWrapper: FC<IInputProps> = ({
 
   return (
     <div className="p-4">
-      <InputPasswordWithRequirements
+      <InputPasswordWithRequirementsOld
         value={value}
         onChange={handleChange}
         {...rest}
@@ -28,7 +28,7 @@ const InputPasswordWithRequirementsWrapper: FC<IInputProps> = ({
 };
 
 const meta: Meta<typeof InputPasswordWithRequirementsWrapper> = {
-  title: "Components/Form/Input Password with Requirements",
+  title: "Components/_Form Old/Input Password with Requirements",
   component: InputPasswordWithRequirementsWrapper,
   args: {
     id: "input_text",

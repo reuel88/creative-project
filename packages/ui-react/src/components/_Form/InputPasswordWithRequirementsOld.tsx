@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { z, ZodError, ZodIssue } from "zod";
 import { IInputProps } from "./_InputContext";
-import InputPassword from "./InputPassword";
+import InputPasswordOld from "./InputPasswordOld";
 import styles from "./InputPasswordWithRequirements.module.css";
 import { VARIANT } from "../../constants";
 
@@ -16,7 +16,7 @@ const schema = z.object({
     .regex(/[^A-Za-z0-9]/, "One special character"),
 });
 
-const InputPasswordWithRequirements: FC<IInputProps> = ({
+const InputPasswordWithRequirementsOld: FC<IInputProps> = ({
   variant = VARIANT.PRIMARY,
   value,
   ...rest
@@ -45,7 +45,7 @@ const InputPasswordWithRequirements: FC<IInputProps> = ({
 
   return (
     <div>
-      <InputPassword variant={variant} value={value} {...rest} />
+      <InputPasswordOld variant={variant} value={value} {...rest} />
       <div className={styles["requirement-wrapper"]}>
         <div className={requirementContainer}>
           <div className={styles["requirement-container--indicator"]}></div>
@@ -61,4 +61,4 @@ const InputPasswordWithRequirements: FC<IInputProps> = ({
   );
 };
 
-export default InputPasswordWithRequirements;
+export default InputPasswordWithRequirementsOld;

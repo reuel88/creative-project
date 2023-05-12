@@ -13,30 +13,10 @@ export interface InputProps {
   onFocus: (e: ChangeEvent) => void;
 }
 
-const Input: FC<InputProps> = ({
-  id,
-  inputClasses: newInputClasses,
-  type,
-  value,
-  onBlur,
-  onChange,
-  onFocus,
-  ...rest
-}) => {
+const Input: FC<InputProps> = ({ inputClasses: newInputClasses, ...rest }) => {
   const inputClasses = classNames(styles["input"], newInputClasses);
 
-  return (
-    <input
-      className={inputClasses}
-      id={id}
-      type={type}
-      value={value}
-      onBlur={onBlur}
-      onChange={onChange}
-      onFocus={onFocus}
-      {...rest}
-    />
-  );
+  return <input className={inputClasses} {...rest} />;
 };
 
 export default Input;

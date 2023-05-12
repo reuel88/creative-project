@@ -1,6 +1,6 @@
 import { useTranslation, Trans } from "react-i18next";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { InputEmail, InputPasswordWithRequirements } from "../Form";
+import { InputEmailOld, InputPasswordWithRequirementsOld } from "../_Form";
 import { Button } from "../Button";
 import { Link } from "../Link";
 
@@ -46,7 +46,7 @@ const SignUpForm = () => {
           </header>
 
           <div className={styles["form__content"]}>
-            <InputEmail
+            <InputEmailOld
               id={"email"}
               label={t("Email")}
               value={email}
@@ -54,7 +54,7 @@ const SignUpForm = () => {
               onChange={handleEmailChange}
             />
 
-            <InputPasswordWithRequirements
+            <InputPasswordWithRequirementsOld
               id="password"
               label={t("Password")}
               value={password}

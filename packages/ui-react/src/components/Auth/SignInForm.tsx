@@ -1,6 +1,6 @@
 import { useTranslation, Trans } from "react-i18next";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { InputEmail, InputPassword } from "../Form";
+import { InputEmailOld, InputPasswordOld } from "../_Form";
 import { Button } from "../Button";
 import { Link } from "../Link";
 
@@ -41,14 +41,14 @@ const SignInForm = () => {
           </header>
 
           <div className={styles["form__content"]}>
-            <InputEmail
+            <InputEmailOld
               id={"email"}
               label={t("Email")}
               value={email}
               onChange={handleEmailChange}
             />
 
-            <InputPassword
+            <InputPasswordOld
               id="password"
               label={t("Password")}
               value={password}

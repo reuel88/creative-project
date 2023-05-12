@@ -54,7 +54,7 @@ const RightComponent = (showPassword: boolean, handleClick: THandleClick) => {
   return Component;
 };
 
-const InputPassword: FC<IInputProps> = ({ ...rest }) => {
+const InputPasswordOld: FC<IInputProps> = ({ ...rest }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClick = () => {
@@ -73,4 +73,4 @@ const InputPassword: FC<IInputProps> = ({ ...rest }) => {
   );
 };
 
-export default InputPassword;
+export default InputPasswordOld;

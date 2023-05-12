@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { IInputProps } from "./_InputContext";
-import InputTemplate from "./InputTemplate";
+import InputTemplate, { IInputTemplateProps } from "./InputTemplate";
 
-const InputText: FC<IInputProps> = ({ ...rest }) => {
+export type TInputTextProps = Omit<IInputTemplateProps, "type">;
+
+const InputText: FC<TInputTextProps> = ({ ...rest }) => {
   return (
     <>
       <InputTemplate type={"text"} {...rest} />

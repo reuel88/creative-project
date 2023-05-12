@@ -12,7 +12,7 @@ const LeftComponent: FC = (props) => {
   );
 };
 
-const InputEmail: FC<IInputProps> = ({ ...rest }) => {
+const InputEmailOld: FC<IInputProps> = ({ ...rest }) => {
   return (
     <>
       <InputTemplate leftComponent={LeftComponent} type={"email"} {...rest} />
@@ -20,4 +20,4 @@ const InputEmail: FC<IInputProps> = ({ ...rest }) => {
   );
 };
 
-export default InputEmail;
+export default InputEmailOld;

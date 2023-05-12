@@ -16,7 +16,8 @@
     "build": "npm run build:vite && npm run build:storybook",
     "build:vite": "tsc && vite build",
     "build:storybook": "storybook build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rimraf ./dist && rimraf ./storybook-static"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -28,6 +29,7 @@
     "i18next-http-backend": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-i18next": "^12.2.2",
     "zod": "^3.21.4"
   },
@@ -66,6 +68,7 @@
     "postcss": "^8.4.23",
     "prettier": "2.8.8",
     "prop-types": "^15.8.1",
+    "rimraf": "^5.0.0",
     "storybook": "^7.0.10",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
