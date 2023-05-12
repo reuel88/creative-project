@@ -1,0 +1,17 @@
+{
+  "depcheck": {
+    "ignoreMatches": [
+      "@storybook/addon-a11y",
+      "@storybook/addon-essentials",
+      "@storybook/addon-interactions",
+      "@storybook/addon-links",
+      "@storybook/blocks",
+      "@storybook/testing-library",
+      "autoprefixer",
+      "postcss",
+      "prettier",
+      "prop-types",
+      "tailwindcss"
+    ]
+  }
+}
