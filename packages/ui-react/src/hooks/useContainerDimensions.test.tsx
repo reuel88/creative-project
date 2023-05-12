@@ -15,7 +15,7 @@ describe("useContainerDimensions", () => {
     });
 
     const MockComponent = () => {
-      const ref = useRef();
+      const ref = useRef<null | HTMLDivElement>(null);
       const dimensions = useContainerDimensions(ref);
 
       return (

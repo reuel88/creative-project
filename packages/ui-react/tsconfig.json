@@ -20,6 +20,6 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
+  "include": ["src", "../../node_modules/@types/jest/index.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
