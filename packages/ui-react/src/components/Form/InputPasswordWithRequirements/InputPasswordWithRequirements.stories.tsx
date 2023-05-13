@@ -1,10 +1,10 @@
-import { InputEmail } from "../index";
-import { Meta, StoryObj } from "@storybook/react";
 import { ChangeEvent, FC, useState } from "react";
-import { IInputProps } from "../_InputContext";
+import { Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../constants";
+import InputPasswordWithRequirements from "./InputPasswordWithRequirements";
+import { TInputPasswordProps } from "../InputPassword";
 
-const InputEmailWrapper: FC<IInputProps> = ({
+const InputWrapper: FC<TInputPasswordProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -18,18 +18,22 @@ const InputEmailWrapper: FC<IInputProps> = ({
 
   return (
     <div className="p-4">
-      <InputEmail value={value} onChange={handleChange} {...rest} />
+      <InputPasswordWithRequirements
+        value={value}
+        onChange={handleChange}
+        {...rest}
+      />
     </div>
   );
 };
 
-const meta: Meta<typeof InputEmailWrapper> = {
-  title: "Components/Form/Input Email",
-  component: InputEmailWrapper,
+const meta: Meta<typeof InputWrapper> = {
+  title: "Components/Form/Input Password/with Requirements",
+  component: InputWrapper,
   args: {
     id: "input_text",
     label: "Input",
-    value: "",
+    error: "",
     variant: VARIANT.PRIMARY,
   },
   argTypes: {
@@ -42,7 +46,7 @@ const meta: Meta<typeof InputEmailWrapper> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputEmailWrapper>;
+type Story = StoryObj<typeof InputWrapper>;
 
 export const Primary: Story = {
   args: {},

@@ -1,5 +1,5 @@
 export * from "./Auth";
-export * from "./Button";
+export { default as Button } from "./Button";
 export * from "./Counter";
 export * from "./Form";
 export * from "./Header";

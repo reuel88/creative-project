@@ -1,10 +1,9 @@
-import { InputText } from "../index";
-import { Meta, StoryObj } from "@storybook/react";
 import { ChangeEvent, FC, useState } from "react";
-import { IInputProps } from "../_InputContext";
+import { Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../constants";
+import InputText, { TInputTextProps } from "./InputText";
 
-const InputTextWrapper: FC<IInputProps> = ({
+const InputWrapper: FC<TInputTextProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -23,12 +22,13 @@ const InputTextWrapper: FC<IInputProps> = ({
   );
 };
 
-const meta: Meta<typeof InputTextWrapper> = {
+const meta: Meta<typeof InputWrapper> = {
   title: "Components/Form/Input Text",
-  component: InputTextWrapper,
+  component: InputWrapper,
   args: {
     id: "input_text",
     label: "Input",
+    error: "",
     value: "",
     variant: VARIANT.PRIMARY,
   },
@@ -42,7 +42,7 @@ const meta: Meta<typeof InputTextWrapper> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputTextWrapper>;
+type Story = StoryObj<typeof InputWrapper>;
 
 export const Primary: Story = {
   args: {},

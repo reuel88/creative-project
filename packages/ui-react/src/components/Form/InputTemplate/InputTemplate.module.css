@@ -1,0 +1,110 @@
+.input-template__wrapper {
+  @apply flex flex-col grow;
+}
+
+.input-template__container-top {
+  @apply flex grow
+    rounded-md
+    bg-neutral-100;
+}
+
+.input-template__container-top:focus,
+.input-template__container-top:focus-within {
+  @apply outline outline-offset-4 outline-2;
+}
+
+.input-template__container-top > *:first-child {
+  @apply border-solid
+    ltr:border-l-[1px] rtl:border-r-[1px]
+    ltr:rounded-l-md rtl:rounded-r-md;
+}
+
+.input-template__container-top > *:last-child {
+  @apply border-solid
+    ltr:border-r-[1px] rtl:border-l-[1px]
+    ltr:rounded-r-md rtl:rounded-l-md;
+}
+
+.input-template__container-top--left {
+  @apply flex items-center justify-center
+    p-3 ltr:pr-0 rtl:pl-0
+    bg-neutral-100
+    border-y-[1px] border-solid
+    border-neutral-400 dark:border-transparent
+    font-sans text-neutral-900
+    text-sm;
+}
+
+.input-template__container-top--left.error {
+  @apply border-red-500;
+}
+
+.input-template__container-top--middle {
+  @apply relative
+    flex grow gap-2
+    pb-2 pt-5 px-3
+    bg-neutral-100
+    border-y-[1px] border-solid
+    border-neutral-400 dark:border-transparent
+    font-sans text-neutral-900
+    text-sm;
+}
+
+.input-template__container-top--right {
+  @apply flex items-center justify-center
+    p-3 ltr:pl-0 rtl:pr-0
+    bg-neutral-100
+    border-y-[1px] border-solid
+    border-neutral-400 dark:border-transparent
+    font-sans text-neutral-900
+    text-sm;
+}
+
+.input-template__container-top--right.error {
+  @apply border-red-500;
+}
+
+.input-template__error {
+  @apply mt-2 px-3 py-2
+    bg-red-100
+    text-red-900 text-sm
+    rounded-md;
+}
+
+.input-template__container-top.primary:focus,
+.input-template__container-top.primary:focus-within {
+  @apply outline-blue-500;
+}
+
+.input-template__container-top.primary:hover
+  .input-template__container-top--left,
+.input-template__container-top.primary:hover
+  .input-template__container-top--middle,
+.input-template__container-top.primary:hover
+  .input-template__container-top--right {
+  @apply border-blue-500;
+}
+
+.input-template__container-top.secondary:focus,
+.input-template__container-top.secondary:focus-within {
+  @apply outline-neutral-100;
+}
+
+.input-template__container-top.secondary:hover
+  .input-template__container-top--left,
+.input-template__container-top.secondary:hover
+  .input-template__container-top--middle,
+.input-template__container-top.secondary:hover
+  .input-template__container-top--right {
+  @apply border-neutral-100;
+}
+
+.input-template__container-top.error:focus,
+.input-template__container-top.error:focus-within {
+  @apply outline-red-300;
+}
+
+.input-template__container-top--middle.error,
+.input-template__container-top--middle.error:hover {
+  @apply border-red-500;
+}

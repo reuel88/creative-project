@@ -1,7 +1,7 @@
 import { useTranslation, Trans } from "react-i18next";
 import { ChangeEvent, FormEvent, useState } from "react";
+import Button from "../Button";
 import { InputEmail, InputPassword } from "../Form";
-import { Button } from "../Button";
 import { Link } from "../Link";
 
 import styles from "./SignInForm.module.css";
