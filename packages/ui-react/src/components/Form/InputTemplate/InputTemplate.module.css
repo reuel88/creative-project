@@ -35,6 +35,10 @@
     text-sm;
 }
 
+.input-template__container-top--left.error {
+  @apply border-red-500;
+}
+
 .input-template__container-top--middle {
   @apply relative
     flex grow gap-2
@@ -56,6 +60,10 @@
     text-sm;
 }
 
+.input-template__container-top--right.error {
+  @apply border-red-500;
+}
+
 .input-template__error {
   @apply mt-2 px-3 py-2
     bg-red-100
@@ -68,7 +76,12 @@
   @apply outline-blue-500;
 }
 
-.input-template__container-top--middle.primary:hover {
+.input-template__container-top.primary:hover
+  .input-template__container-top--left,
+.input-template__container-top.primary:hover
+  .input-template__container-top--middle,
+.input-template__container-top.primary:hover
+  .input-template__container-top--right {
   @apply border-blue-500;
 }
 
@@ -77,7 +90,12 @@
   @apply outline-neutral-100;
 }
 
-.input-template__container-top--middle.secondary:hover {
+.input-template__container-top.secondary:hover
+  .input-template__container-top--left,
+.input-template__container-top.secondary:hover
+  .input-template__container-top--middle,
+.input-template__container-top.secondary:hover
+  .input-template__container-top--right {
   @apply border-neutral-100;
 }
 

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import SignUpForm from "./SignUpForm";
 
 const meta: Meta<typeof SignUpForm> = {
-  title: "Components/Auth/Sign Up _Form",
+  title: "Components/Auth/Sign Up Form",
   component: SignUpForm,
 };
 

@@ -31,15 +31,66 @@ describe("<InputTemplate />", () => {
           <InputTemplate
             id={"hello"}
             label={"world"}
-            type={"text"}
             leftComponent={MockLeft}
             rightComponent={MockRight}
+            type={"text"}
+            value={"John Doe"}
             onChange={MockChange}
           />
         </TestingWrapper>
       );
       expect(getByText("Left")).toBeInTheDocument();
       expect(getByText("Right")).toBeInTheDocument();
+    });
+
+    it("should have no error when undefined", () => {
+      const { queryByText } = setup(
+        <TestingWrapper translations={{ Search: "Search" }}>
+          <InputTemplate
+            id={"hello"}
+            error={undefined}
+            label={"world"}
+            type={"text"}
+            value={"John Doe"}
+            onChange={MockChange}
+          />
+        </TestingWrapper>
+      );
+      expect(queryByText("Has Error")).not.toBeInTheDocument();
+    });
+
+    it("should have no error when null", () => {
+      const { queryByText } = setup(
+        <TestingWrapper translations={{ Search: "Search" }}>
+          <InputTemplate
+            id={"hello"}
+            error={null}
+            label={"world"}
+            type={"text"}
+            value={"John Doe"}
+            onChange={MockChange}
+          />
+        </TestingWrapper>
+      );
+      expect(queryByText("Has Error")).not.toBeInTheDocument();
+    });
+
+    it("should have error", () => {
+      const { getByLabelText, getByText } = setup(
+        <TestingWrapper translations={{ "Has Error": "Has Error" }}>
+          <InputTemplate
+            id={"hello"}
+            error={"Has Error"}
+            label={"world"}
+            type={"text"}
+            value={"John Doe"}
+            onChange={MockChange}
+          />
+        </TestingWrapper>
+      );
+      expect(getByText("Has Error")).toBeInTheDocument();
+      const input = getByLabelText("world");
+      expect(input).toHaveAttribute("aria-describedby", "hello_error");
     });
 
     it("should call onBlur", () => {
@@ -49,6 +100,7 @@ describe("<InputTemplate />", () => {
             id={"hello"}
             label={"world"}
             type={"text"}
+            value={"John Doe"}
             onBlur={MockBlur}
             onChange={MockChange}
           />
@@ -66,6 +118,7 @@ describe("<InputTemplate />", () => {
             id={"hello"}
             label={"world"}
             type={"text"}
+            value={"John Doe"}
             onChange={MockChange}
           />
         </TestingWrapper>
@@ -82,6 +135,7 @@ describe("<InputTemplate />", () => {
             id={"hello"}
             label={"world"}
             type={"text"}
+            value={"John Doe"}
             onChange={MockChange}
             onFocus={MockFocus}
           />

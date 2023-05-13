@@ -1,7 +1,7 @@
 import { useTranslation, Trans } from "react-i18next";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { InputEmailOld, InputPasswordWithRequirementsOld } from "../_Form";
-import { Button } from "../Button";
+import Button from "../Button";
+import { InputEmail, InputPasswordWithRequirements } from "../Form";
 import { Link } from "../Link";
 
 import styles from "./SignUpForm.module.css";
@@ -33,11 +33,11 @@ const SignUpForm = () => {
             </h1>
             <p>
               <Trans i18nKey={"By signing up to Classified"}>
-                By signing up to Classified, I agree to the{" "}
+                By signing up to Classified, I agree to the
                 <Link variant="secondary" href={"https://google.com"}>
                   Conditions of use
-                </Link>{" "}
-                and{" "}
+                </Link>
+                and
                 <Link href="https://bing.com" variant="secondary">
                   Privacy policy
                 </Link>
@@ -46,7 +46,7 @@ const SignUpForm = () => {
           </header>
 
           <div className={styles["form__content"]}>
-            <InputEmailOld
+            <InputEmail
               id={"email"}
               label={t("Email")}
               value={email}
@@ -54,7 +54,7 @@ const SignUpForm = () => {
               onChange={handleEmailChange}
             />
 
-            <InputPasswordWithRequirementsOld
+            <InputPasswordWithRequirements
               id="password"
               label={t("Password")}
               value={password}
@@ -70,7 +70,7 @@ const SignUpForm = () => {
           <footer className={styles["form__footer"]}>
             <p className={styles["form__footer--end"]}>
               <Trans i18nKey={"Already have an account"}>
-                Already have an account?{" "}
+                Already have an account?
                 <Link href={"https://google.com"} variant="secondary">
                   Log in
                 </Link>

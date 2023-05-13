@@ -13,22 +13,28 @@ import Input, { IInputProps } from "../Input";
 import Label, { ILabelProps } from "../Label";
 import styles from "./InputTemplate.module.css";
 
+export interface IComponentTypeProps {
+  className?: string;
+  error?: boolean;
+}
+
 interface InputTemplateProps extends IInputProps, ILabelProps {
-  leftComponent?: ComponentType<{ className: string; error: boolean }>;
-  rightComponent?: ComponentType<{ className: string; error: boolean }>;
+  leftComponent?: ComponentType<IComponentTypeProps>;
+  rightComponent?: ComponentType<IComponentTypeProps>;
   variant?: typeof VARIANT.PRIMARY | typeof VARIANT.SECONDARY;
   placeholder?: string;
 }
 
 type InputTemplateWithoutProps = Omit<
   InputTemplateProps,
-  "active" | "error" | "value" | "onBlur" | "onChange" | "onFocus"
+  "active" | "error" | "onBlur" | "onChange" | "onFocus"
 >;
 
 export interface IInputTemplateProps extends InputTemplateWithoutProps {
-  error?: string;
+  containerTopClasses?: string;
+  error?: string | null;
   onBlur?: (e: SyntheticEvent) => void;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (e: SyntheticEvent) => void;
 }
 
@@ -36,11 +42,13 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
   (
     {
       id,
+      containerTopClasses: defaultContainerTopClasses = "",
       error = "",
       label,
       leftComponent: LeftComponent,
       rightComponent: RightComponent,
       placeholder,
+      value,
       variant = VARIANT.PRIMARY,
       onBlur,
       onChange,
@@ -51,7 +59,6 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
   ) => {
     const { t } = useTranslation();
     const [hasError, setHasError] = useState(false);
-    const [value, setValue] = useState("");
     const [flagActive, setFlagActive] = useState(false);
     const [labelActive, setLabelActive] = useState(false);
 
@@ -64,13 +71,13 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
     }, [error]);
 
     const containerTopClasses = classNames(
+      defaultContainerTopClasses,
       styles["input-template__container-top"],
       styles[variant],
       {
         [styles["error"]]: hasError,
       }
     );
-
     const containerTopMiddleClasses = classNames(
       styles["input-template__container-top--middle"],
       styles[variant],
@@ -79,14 +86,23 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
       }
     );
 
+    const containerTopLeftClasses = classNames(
+      styles["input-template__container-top--left"],
+      {
+        [styles["error"]]: hasError,
+      }
+    );
+
+    const containerTopRightClasses = classNames(
+      styles["input-template__container-top--right"],
+      {
+        [styles["error"]]: hasError,
+      }
+    );
+
     const handleBlur = (e: SyntheticEvent) => {
       setFlagActive(false);
       if (typeof onBlur === "function") onBlur(e);
-    };
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-      if (typeof onChange === "function") onChange(e);
     };
 
     const handleFocus = (e: SyntheticEvent) => {
@@ -100,7 +116,7 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
         <div className={containerTopClasses}>
           {LeftComponent && (
             <LeftComponent
-              className={styles["input-template__container-top--left"]}
+              className={containerTopLeftClasses}
               error={hasError}
             />
           )}
@@ -116,7 +132,7 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
               ref={ref}
               value={value}
               onBlur={handleBlur}
-              onChange={handleChange}
+              onChange={onChange}
               onFocus={handleFocus}
               aria-invalid={hasError}
               {...(hasError ? { [`aria-describedby`]: `${id}_error` } : {})}
@@ -125,12 +141,12 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
           </div>
           {RightComponent && (
             <RightComponent
-              className={styles["input-template__container-top--right"]}
+              className={containerTopRightClasses}
               error={hasError}
             />
           )}
         </div>
-        {hasError && (
+        {hasError && typeof error === "string" && (
           <div className={styles["input-template__error"]} id={`${id}_error`}>
             {t(error)}
           </div>

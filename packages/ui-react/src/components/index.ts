@@ -1,7 +1,7 @@
 export * from "./Auth";
-export * from "./Button";
+export { default as Button } from "./Button";
 export * from "./Counter";
-export * from "./_Form";
+export * from "./Form";
 export * from "./Header";
 export * from "./Hero";
 export * from "./Link";

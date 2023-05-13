@@ -3,11 +3,11 @@ import InputText from "./InputText";
 import { IInputTemplateProps } from "../InputTemplate";
 
 jest.mock("../InputTemplate", () => {
-  return ({ type }: IInputTemplateProps) => {
+  return ({ id, type, label, ...rest }: IInputTemplateProps) => {
     return (
       <>
-        <label htmlFor="world">John Doe</label>
-        <input type={type} name="hello" id="world" />
+        <label htmlFor={id}>{label}</label>
+        <input type={type} name="hello" id={id} {...rest} />
       </>
     );
   };
@@ -15,7 +15,16 @@ jest.mock("../InputTemplate", () => {
 
 describe("<InputText />", () => {
   it("should render correctly", () => {
-    render(<InputText id={""} label={""} />);
+    const MockChange = jest.fn();
+
+    render(
+      <InputText
+        id={"world"}
+        label={"John Doe"}
+        value={"John"}
+        onChange={MockChange}
+      />
+    );
 
     const input = screen.getByLabelText("John Doe");
     expect(input).toBeInTheDocument();

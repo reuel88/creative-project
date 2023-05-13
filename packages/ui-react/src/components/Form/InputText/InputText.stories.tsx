@@ -1,11 +1,23 @@
-import { FC } from "react";
-import InputText, { TInputTextProps } from "./InputText";
+import { ChangeEvent, FC, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
+import { VARIANT } from "../../../constants";
+import InputText, { TInputTextProps } from "./InputText";
 
-const InputWrapper: FC<TInputTextProps> = ({ ...rest }) => {
+const InputWrapper: FC<TInputTextProps> = ({
+  value: defaultValue,
+  onChange,
+  ...rest
+}) => {
+  const [value, setValue] = useState(defaultValue);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+    if (typeof onChange === "function") onChange(e);
+  };
+
   return (
     <div className="p-4">
-      <InputText {...rest} />
+      <InputText value={value} onChange={handleChange} {...rest} />
     </div>
   );
 };
@@ -17,6 +29,14 @@ const meta: Meta<typeof InputWrapper> = {
     id: "input_text",
     label: "Input",
     error: "",
+    value: "",
+    variant: VARIANT.PRIMARY,
+  },
+  argTypes: {
+    variant: {
+      options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
+      control: { type: "inline-radio" },
+    },
   },
 };
 

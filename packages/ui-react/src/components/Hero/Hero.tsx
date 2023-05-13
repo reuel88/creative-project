@@ -1,11 +1,11 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ComponentType } from "react";
+import { ChangeEvent, ComponentType, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import * as z from "zod";
-import { Button } from "../Button";
+import Button from "../Button";
 import { InputText } from "../Form";
 
 import styles from "./Hero.module.css";
@@ -33,6 +33,7 @@ type TSchema = z.infer<typeof schema>;
 
 const Hero = () => {
   const { t } = useTranslation();
+  const [value, setValue] = useState("");
   const {
     register,
     handleSubmit,
@@ -42,6 +43,10 @@ const Hero = () => {
   });
 
   const locationPostcode = "location_postcode";
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
 
   const onSubmit = (data: TSchema) => {
     console.log(data);
@@ -56,7 +61,8 @@ const Hero = () => {
             error={errors[locationPostcode]?.message}
             label={t("Location or Postcode")}
             rightComponent={RightComponent(isDirty)}
-            {...register(locationPostcode)}
+            value={value}
+            {...register(locationPostcode, { onChange: handleChange })}
           />
         </div>
       </form>
