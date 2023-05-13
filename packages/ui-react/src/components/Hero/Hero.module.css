@@ -14,20 +14,16 @@
   @apply flex rounded-md w-full;
 }
 
-.search-input:focus,
-.search-input:focus-within {
-  @apply outline outline-offset-4 outline-2 outline-blue-500;
-}
-
 .button {
   @apply relative
     flex items-center justify-center gap-2
     ltr:border-l-0 ltr:rounded-l-none rtl:border-r-0 rtl:rounded-r-none;
 }
 
-.button:focus,
-.button:focus-within {
-  @apply outline  outline-0 outline-transparent;
+.hero-form .button:focus,
+.hero-form .button:focus-within {
+  @apply bg-blue-700
+  outline outline-0 outline-transparent;
 }
 
 .button__text {

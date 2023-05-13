@@ -5,12 +5,14 @@ import styles from "./Label.module.css";
 export interface ILabelProps {
   id: string;
   active: boolean;
+  error: boolean;
   label: string;
 }
 
-const Label: FC<ILabelProps> = ({ id, active, label }) => {
+const Label: FC<ILabelProps> = ({ id, active, error, label }) => {
   const labelClasses = classNames(styles["label"], {
     [styles["label--active"]]: active,
+    [styles["error"]]: error,
   });
 
   return (

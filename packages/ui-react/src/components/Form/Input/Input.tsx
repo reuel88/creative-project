@@ -1,4 +1,9 @@
-import { ChangeEvent, FC, HTMLInputTypeAttribute, SyntheticEvent } from "react";
+import {
+  ChangeEvent,
+  forwardRef,
+  HTMLInputTypeAttribute,
+  SyntheticEvent,
+} from "react";
 import styles from "./Input.module.css";
 
 export interface IInputProps {
@@ -10,12 +15,11 @@ export interface IInputProps {
   onFocus: (e: SyntheticEvent) => void;
 }
 
-const Input: FC<IInputProps> = ({ ...rest }) => {
+const Input = forwardRef<HTMLInputElement, IInputProps>(({ ...rest }, ref) => {
   return (
     <>
-      <input className={styles["input"]} {...rest} />
+      <input className={styles["input"]} ref={ref} {...rest} />
     </>
   );
-};
-
+});
 export default Input;

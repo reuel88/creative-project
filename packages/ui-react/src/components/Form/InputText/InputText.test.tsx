@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import InputText from "./InputText";
-import { IInputTemplateProps } from "./InputTemplate";
+import { IInputTemplateProps } from "../InputTemplate";
 
-jest.mock("./InputTemplate", () => {
+jest.mock("../InputTemplate", () => {
   return ({ type }: IInputTemplateProps) => {
     return (
       <>
@@ -15,16 +15,7 @@ jest.mock("./InputTemplate", () => {
 
 describe("<InputText />", () => {
   it("should render correctly", () => {
-    render(
-      <InputText
-        id={""}
-        value={""}
-        label={""}
-        onChange={() => {
-          console.log("hello");
-        }}
-      />
-    );
+    render(<InputText id={""} label={""} />);
 
     const input = screen.getByLabelText("John Doe");
     expect(input).toBeInTheDocument();

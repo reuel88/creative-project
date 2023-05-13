@@ -18,6 +18,18 @@
   @apply outline outline-offset-4 outline-2;
 }
 
+.button:disabled,
+.button[disabled],
+.button[type="button"]:disabled,
+.button[type="button"][disabled],
+.button[type="reset"]:disabled,
+.button[type="reset"][disabled],
+.button[type="submit"]:disabled,
+.button[type="submit"][disabled] {
+  @apply opacity-75
+ cursor-not-allowed;
+}
+
 .primary,
 .primary[type="button"],
 .primary[type="reset"],

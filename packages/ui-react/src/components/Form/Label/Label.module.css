@@ -9,3 +9,8 @@
     text-neutral-600
     text-xs;
 }
+
+.label.error,
+.label--active.error {
+  @apply text-red-700;
+}

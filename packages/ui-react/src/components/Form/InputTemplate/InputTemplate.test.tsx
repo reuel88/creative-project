@@ -1,7 +1,8 @@
-import InputTemplate, { IInputTemplateProps } from "./InputTemplate";
+import { ReactElement } from "react";
 import userEvent from "@testing-library/user-event";
 import { fireEvent, render } from "@testing-library/react";
-import { ReactElement } from "react";
+import InputTemplate, { IInputTemplateProps } from "./InputTemplate";
+import TestingWrapper from "../../../utils/TestingWrapper";
 
 describe("<InputTemplate />", () => {
   describe("Renders correctly", () => {
@@ -26,15 +27,16 @@ describe("<InputTemplate />", () => {
 
     it("should have a right and left component", () => {
       const { getByText } = setup(
-        <InputTemplate
-          id={"hello"}
-          label={"world"}
-          type={"text"}
-          value={"John Doe"}
-          leftComponent={MockLeft}
-          rightComponent={MockRight}
-          onChange={MockChange}
-        />
+        <TestingWrapper translations={{ Search: "Search" }}>
+          <InputTemplate
+            id={"hello"}
+            label={"world"}
+            type={"text"}
+            leftComponent={MockLeft}
+            rightComponent={MockRight}
+            onChange={MockChange}
+          />
+        </TestingWrapper>
       );
       expect(getByText("Left")).toBeInTheDocument();
       expect(getByText("Right")).toBeInTheDocument();
@@ -42,14 +44,15 @@ describe("<InputTemplate />", () => {
 
     it("should call onBlur", () => {
       const { getByLabelText } = setup(
-        <InputTemplate
-          id={"hello"}
-          label={"world"}
-          type={"text"}
-          value={"John Doe"}
-          onBlur={MockBlur}
-          onChange={MockChange}
-        />
+        <TestingWrapper translations={{ Search: "Search" }}>
+          <InputTemplate
+            id={"hello"}
+            label={"world"}
+            type={"text"}
+            onBlur={MockBlur}
+            onChange={MockChange}
+          />
+        </TestingWrapper>
       );
       const input = getByLabelText("world");
       fireEvent.blur(input);
@@ -58,13 +61,14 @@ describe("<InputTemplate />", () => {
 
     it("should call onChange", async () => {
       const { user, getByLabelText } = setup(
-        <InputTemplate
-          id={"hello"}
-          label={"world"}
-          type={"text"}
-          value={"John Doe"}
-          onChange={MockChange}
-        />
+        <TestingWrapper translations={{ Search: "Search" }}>
+          <InputTemplate
+            id={"hello"}
+            label={"world"}
+            type={"text"}
+            onChange={MockChange}
+          />
+        </TestingWrapper>
       );
       const input = getByLabelText("world");
       await user.type(input, "John Doe");
@@ -73,14 +77,15 @@ describe("<InputTemplate />", () => {
 
     it("should call onFocus", () => {
       const { getByLabelText } = setup(
-        <InputTemplate
-          id={"hello"}
-          label={"world"}
-          type={"text"}
-          value={"John Doe"}
-          onChange={MockChange}
-          onFocus={MockFocus}
-        />
+        <TestingWrapper translations={{ Search: "Search" }}>
+          <InputTemplate
+            id={"hello"}
+            label={"world"}
+            type={"text"}
+            onChange={MockChange}
+            onFocus={MockFocus}
+          />
+        </TestingWrapper>
       );
       const input = getByLabelText("world");
       fireEvent.focus(input);

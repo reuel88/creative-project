@@ -1,22 +1,11 @@
-import { ChangeEvent, FC, useState } from "react";
+import { FC } from "react";
 import InputText, { TInputTextProps } from "./InputText";
 import { Meta, StoryObj } from "@storybook/react";
 
-const InputWrapper: FC<TInputTextProps> = ({
-  value: defaultValue,
-  onChange,
-  ...rest
-}) => {
-  const [value, setValue] = useState(defaultValue);
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-    if (typeof onChange === "function") onChange(e);
-  };
-
+const InputWrapper: FC<TInputTextProps> = ({ ...rest }) => {
   return (
     <div className="p-4">
-      <InputText value={value} onChange={handleChange} {...rest} />
+      <InputText {...rest} />
     </div>
   );
 };
@@ -27,7 +16,7 @@ const meta: Meta<typeof InputWrapper> = {
   args: {
     id: "input_text",
     label: "Input",
-    value: "",
+    error: "",
   },
 };
 
