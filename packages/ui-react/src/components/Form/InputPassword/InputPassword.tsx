@@ -15,7 +15,10 @@ import InputTemplate, {
 import Button from "../../Button";
 import styles from "./InputPassword.module.css";
 
-export type TInputPasswordProps = Omit<IInputTemplateProps, "type">;
+export type TInputPasswordProps = Omit<
+  IInputTemplateProps,
+  "containerTopClasses" | "type"
+>;
 
 const LeftComponent = (showPassword: boolean) => {
   const Component: ComponentType<IComponentTypeProps> = ({

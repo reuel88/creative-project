@@ -1,6 +1,7 @@
-import { ChangeEvent, FC, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { ChangeEvent, FC, RefAttributes, useState } from "react";
+import { ArgTypes, Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../constants";
+import argTypes from "../argTypes";
 import InputEmail, { TInputEmailProps } from "./InputEmail";
 
 const InputWrapper: FC<TInputEmailProps> = ({
@@ -22,33 +23,34 @@ const InputWrapper: FC<TInputEmailProps> = ({
   );
 };
 
-const meta: Meta<typeof InputWrapper> = {
+const meta: Meta<typeof InputEmail> = {
   title: "Components/Form/Input Email",
-  component: InputWrapper,
+  component: InputEmail,
   args: {
     id: "input_text",
     label: "Input",
     error: "",
+    value: "",
     variant: VARIANT.PRIMARY,
+    onChange: (e) => console.log(e.target.value),
   },
-  argTypes: {
-    variant: {
-      options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
-      control: { type: "inline-radio" },
-    },
-  },
+  argTypes: argTypes as Partial<
+    ArgTypes<TInputEmailProps & RefAttributes<HTMLInputElement>>
+  >,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof InputWrapper>;
+type Story = StoryObj<typeof InputEmail>;
 
 export const Primary: Story = {
+  render: (props) => <InputWrapper {...props} />,
   args: {},
 };
 
 export const Secondary: Story = {
+  render: (props) => <InputWrapper {...props} />,
   args: {
-    variant: "secondary",
+    variant: VARIANT.SECONDARY,
   },
 };

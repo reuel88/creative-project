@@ -6,7 +6,10 @@ import InputTemplate, {
   IInputTemplateProps,
 } from "../InputTemplate";
 
-export type TInputEmailProps = Omit<IInputTemplateProps, "type">;
+export type TInputEmailProps = Omit<
+  IInputTemplateProps,
+  "containerTopClasses" | "type"
+>;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LeftComponent: FC<IComponentTypeProps> = ({ error, ...rest }) => {

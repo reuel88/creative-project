@@ -10,10 +10,10 @@ module.exports = {
   coveragePathIgnorePatterns: [".stories.tsx", ".stories.ts"],
   coverageThreshold: {
     global: {
-      statements: 30,
-      branches: 10,
-      functions: 10,
-      lines: 20,
+      statements: 60,
+      branches: 75,
+      functions: 40,
+      lines: 60,
     },
   },
   setupFilesAfterEnv: ["./config/jest/setupTests.cjs"],
