@@ -8,6 +8,7 @@ import styles from "./Input.module.css";
 
 export interface IInputProps {
   id: string;
+  name: string;
   type: HTMLInputTypeAttribute;
   value: string;
   onBlur: (e: SyntheticEvent) => void;

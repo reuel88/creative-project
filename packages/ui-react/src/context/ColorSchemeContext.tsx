@@ -10,8 +10,16 @@ import {
 
 const ColorSchemeContext = createContext({});
 
-export const useColorScheme = () => {
-  return useContext(ColorSchemeContext);
+export const useColorSchemeContext = () => {
+  const context = useContext(ColorSchemeContext);
+
+  if (context === undefined) {
+    throw Error(
+      "useColorSchemeContext must be used with a ColorSchemeContext.Provider"
+    );
+  }
+
+  return context;
 };
 
 export const ColorSchemeProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -35,13 +43,13 @@ export const ColorSchemeProvider: FC<PropsWithChildren> = ({ children }) => {
     setScheme((scheme) => (scheme === "light" ? "dark" : "light"));
   };
 
-  const context = {
+  const providerValue = {
     scheme,
     toggleScheme,
   };
 
   return (
-    <ColorSchemeContext.Provider value={context}>
+    <ColorSchemeContext.Provider value={providerValue}>
       {children}
     </ColorSchemeContext.Provider>
   );

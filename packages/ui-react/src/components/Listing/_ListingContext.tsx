@@ -11,15 +11,15 @@ interface IListingContext extends IListingProps {
   toggleView: (value: TViewProp) => void;
 }
 
-type TUseListingContext = (props: IListingProps) => IListingContext;
+type TUseListingProviderValue = (props: IListingProps) => IListingContext;
 
 const ListingContext = createContext({} as IListingContext);
 
-export const useListing = () => {
+export const useListingContext = () => {
   return useContext(ListingContext);
 };
 
-export const useListingContext: TUseListingContext = ({
+export const useListingProviderValue: TUseListingProviderValue = ({
   title,
   view: defaultView,
 }) => {
@@ -40,10 +40,10 @@ export const withListing = <P extends IListingProps>(
   Component: ComponentType
 ) => {
   return (props: P) => {
-    const context = useListingContext(props);
+    const value = useListingProviderValue(props);
 
     return (
-      <ListingContext.Provider value={context}>
+      <ListingContext.Provider value={value}>
         <Component />
       </ListingContext.Provider>
     );

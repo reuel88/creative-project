@@ -14,6 +14,7 @@ describe("<Input />", () => {
           <label htmlFor="hello">World</label>
           <Input
             id="hello"
+            name={"hello"}
             type={"text"}
             value={"hello world"}
             onBlur={MockBlur}
