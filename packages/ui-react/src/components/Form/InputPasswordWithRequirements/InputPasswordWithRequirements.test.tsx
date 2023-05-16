@@ -11,6 +11,7 @@ describe("<InputPasswordWithRequirements />", () => {
         <InputPasswordWithRequirements
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"Jane Doe"}
           onChange={MockChange}
         />
@@ -39,6 +40,7 @@ describe("<InputPasswordWithRequirements />", () => {
         <InputPasswordWithRequirements
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"a"}
           onChange={MockChange}
         />
@@ -56,6 +58,7 @@ describe("<InputPasswordWithRequirements />", () => {
         <InputPasswordWithRequirements
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"aaaaaaaa"}
           onChange={MockChange}
         />
@@ -71,6 +74,7 @@ describe("<InputPasswordWithRequirements />", () => {
         <InputPasswordWithRequirements
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"aaaaaaaaA"}
           onChange={MockChange}
         />
@@ -86,6 +90,7 @@ describe("<InputPasswordWithRequirements />", () => {
         <InputPasswordWithRequirements
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"aaaaaaaaA1"}
           onChange={MockChange}
         />
@@ -101,6 +106,7 @@ describe("<InputPasswordWithRequirements />", () => {
         <InputPasswordWithRequirements
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"aaaaaaaaA1!"}
           onChange={MockChange}
         />

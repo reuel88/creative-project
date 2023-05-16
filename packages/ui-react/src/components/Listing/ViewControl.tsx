@@ -7,11 +7,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
-import { TViewProp, useListing } from "./_ListingContext";
+import { TViewProp, useListingContext } from "./_ListingContext";
 import styles from "./ViewControl.module.css";
 
 const ViewControl = () => {
-  const { view, toggleView } = useListing();
+  const { view, toggleView } = useListingContext();
   const { t } = useTranslation();
 
   const listButtonClasses = classNames(styles["view-control__button"], {

@@ -47,18 +47,20 @@ const SignUpForm = () => {
 
           <div className={styles["form__content"]}>
             <InputEmail
-              id={"email"}
+              id="email"
               label={t("Email")}
+              name="email"
               value={email}
-              variant={"secondary"}
+              variant="secondary"
               onChange={handleEmailChange}
             />
 
             <InputPasswordWithRequirements
               id="password"
               label={t("Password")}
+              name="password"
               value={password}
-              variant={"secondary"}
+              variant="secondary"
               onChange={handlePasswordChange}
             />
 

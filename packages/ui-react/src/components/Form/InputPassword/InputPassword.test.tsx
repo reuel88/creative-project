@@ -11,6 +11,7 @@ describe("<InputPassword />", () => {
         <InputPassword
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"Jane Doe"}
           onChange={MockChange}
         />

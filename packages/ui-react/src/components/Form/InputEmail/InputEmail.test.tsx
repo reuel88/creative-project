@@ -11,6 +11,7 @@ describe("<InputEmail />", () => {
         <InputEmail
           id={"world"}
           label={"John Doe"}
+          name={"hello"}
           value={"Jane Doe"}
           onChange={MockChange}
         />
