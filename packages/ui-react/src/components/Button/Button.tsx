@@ -5,8 +5,8 @@ import {
   DetailedHTMLProps,
   FC,
 } from "react";
-import styles from "./Button.module.css";
 import { VARIANT } from "../../constants";
+import styles from "./Button.module.css";
 
 interface ButtonProps
   extends DetailedHTMLProps<
