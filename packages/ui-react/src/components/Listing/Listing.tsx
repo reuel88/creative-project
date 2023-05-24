@@ -1,12 +1,14 @@
 import classNames from "classnames";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { Card } from "../Card";
-import { useListing, withListing } from "./_ListingContext";
+import { useListingContext, withListing } from "./_ListingContext";
 import ViewControl from "./ViewControl";
 import styles from "./Listing.module.css";
 
 const Listing: FC = () => {
-  const { title, view } = useListing();
+  const { t } = useTranslation();
+  const { title, view } = useListingContext();
 
   const listClasses = classNames(styles["list"], {
     [styles["list--grid"]]: view === "grid",
@@ -21,6 +23,7 @@ const Listing: FC = () => {
       <header className={styles["listing__header"]}>
         <h2 className={styles["listing__title"]}>{title}</h2>
         <ViewControl />
+        <div>{t("Sort By")} :</div>
       </header>
       <div className={styles["listing__content"]}>
         <ul className={listClasses}>

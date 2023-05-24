@@ -4,7 +4,7 @@
 }
 
 .view-control__label {
-  @apply pl-1 hidden md:inline-block;
+  @apply pl-1 inline-block md:hidden;
 }
 
 .view-control__button {
@@ -13,8 +13,9 @@
     border-[1px] border-solid border-transparent
     rounded-md
     box-border
-    p-1 w-6 h-6
-     bg-transparent
+    p-1 md:p-2
+    w-10 md:w-auto h-10
+    bg-transparent
     transition-[border-color] transition-[outline] duration-75;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .view-control__button__text {
-  @apply h-0 w-0
-    absolute
-    overflow-hidden;
+  @apply w-0 md:w-auto h-0 md:h-auto
+    absolute md:relative
+    overflow-hidden md:overflow-auto;
 }

@@ -7,7 +7,7 @@ jest.mock("../InputTemplate", () => {
     return (
       <>
         <label htmlFor={id}>{label}</label>
-        <input type={type} name="hello" id={id} {...rest} />
+        <input type={type} id={id} {...rest} />
       </>
     );
   };
@@ -21,6 +21,7 @@ describe("<InputText />", () => {
       <InputText
         id={"world"}
         label={"John Doe"}
+        name={"hello"}
         value={"John"}
         onChange={MockChange}
       />
