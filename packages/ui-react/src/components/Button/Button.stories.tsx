@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../constants";
-import Button from "./Button";
+import Button from "./";
 
 const meta: Meta<typeof Button> = {
-  title: "Components/Button",
+  title: "Components/Button/V1",
   component: Button,
   args: {
     children: "Button",

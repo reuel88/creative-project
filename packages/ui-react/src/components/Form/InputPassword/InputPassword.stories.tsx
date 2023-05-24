@@ -24,7 +24,7 @@ const InputWrapper: FC<TInputPasswordProps> = ({
 };
 
 const meta: Meta<typeof InputPassword> = {
-  title: "Components/Form/Input Password",
+  title: "Components/Form/Input Password/V1",
   component: InputPassword,
   args: {
     id: "input_text",

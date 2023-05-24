@@ -24,7 +24,7 @@ const InputWrapper: FC<TInputTextProps> = ({
 };
 
 const meta: Meta<typeof InputText> = {
-  title: "Components/Form/Input Text",
+  title: "Components/Form/Input Text/V1",
   component: InputText,
   args: {
     id: "input_text",
