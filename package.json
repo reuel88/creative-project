@@ -1,7 +1,7 @@
 {
   "name": "creative-project",
   "version": "0.1.0",
-  "description": "```shell find . -name \"package-lock.json\" -type f -prune -exec rm -rf '{}' +;",
+  "description": "Side project",
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",

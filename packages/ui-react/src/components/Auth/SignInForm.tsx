@@ -42,8 +42,9 @@ const SignInForm = () => {
 
           <div className={styles["form__content"]}>
             <InputEmail
-              id={"email"}
+              id="email"
               label={t("Email")}
+              name="email"
               value={email}
               onChange={handleEmailChange}
             />
@@ -51,6 +52,7 @@ const SignInForm = () => {
             <InputPassword
               id="password"
               label={t("Password")}
+              name="password"
               value={password}
               onChange={handlePasswordChange}
             />
