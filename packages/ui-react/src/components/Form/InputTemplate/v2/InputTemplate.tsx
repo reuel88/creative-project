@@ -13,6 +13,7 @@ export type SideComponentProps = {
 };
 
 export type InputTemplateProps = AriaTextFieldProps & {
+  containerTopClasses?: string;
   description?: string;
   errorMessage?: string;
   label: string;
@@ -23,6 +24,7 @@ export type InputTemplateProps = AriaTextFieldProps & {
 
 const InputTemplate: FC<InputTemplateProps> = (props) => {
   const {
+    containerTopClasses: defaultContainerTopClasses = "",
     description,
     errorMessage,
     label,
@@ -47,6 +49,7 @@ const InputTemplate: FC<InputTemplateProps> = (props) => {
   }, [errorMessage]);
 
   const containerTopClasses = classNames(
+    defaultContainerTopClasses,
     styles["input-template__container-top"],
     styles[variant],
     {

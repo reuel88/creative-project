@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import InputText from "./InputText";
 
-describe("<InputEmail />", () => {
+describe("<InputPassword />", () => {
   it("should render correctly", () => {
     const MockChange = jest.fn();
 

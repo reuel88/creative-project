@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import InputEmail from "./InputEmail";
 import TestingWrapper from "../../../utils/TestingWrapper";
 
-describe("<InputEmail />", () => {
+describe("<InputPassword />", () => {
   const MockChange = jest.fn();
 
   it("should render correctly", () => {
