@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { VARIANT } from "../../../constants";
 import Input, { IInputProps } from "../Input";
 import Label, { ILabelProps } from "../Label";
-import styles from "./InputTemplate.module.css";
+import styles from "./InputTemplate.module.scss";
 
 export interface IComponentTypeProps {
   className?: string;
@@ -147,7 +147,10 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
           )}
         </div>
         {hasError && typeof error === "string" && (
-          <div className={styles["input-template__error"]} id={`${id}_error`}>
+          <div
+            className={styles["input-template__error-message"]}
+            id={`${id}_error`}
+          >
             {t(error)}
           </div>
         )}

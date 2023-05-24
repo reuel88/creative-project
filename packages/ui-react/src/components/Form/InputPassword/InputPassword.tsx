@@ -13,7 +13,7 @@ import InputTemplate, {
   IInputTemplateProps,
 } from "../InputTemplate";
 import Button from "../../Button";
-import styles from "./InputPassword.module.css";
+import styles from "./InputPassword.module.scss";
 
 export type TInputPasswordProps = Omit<
   IInputTemplateProps,

@@ -11,8 +11,16 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     variant: {
+      type: { name: "string", required: false },
+      description: "Styling; mainly the color scheme",
       options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
       control: { type: "inline-radio" },
+      table: {
+        type: {
+          summary: `${VARIANT.PRIMARY} | ${VARIANT.SECONDARY}`,
+        },
+        defaultValue: { summary: VARIANT.PRIMARY },
+      },
     },
   },
 };

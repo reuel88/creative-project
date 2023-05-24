@@ -10,7 +10,8 @@ import InputTemplate from "../../InputTemplate";
 import { InputTemplateProps, SideComponentProps } from "../../InputTemplate/v2";
 import { useTranslation } from "react-i18next";
 import Button from "../../../Button";
-import styles from "../InputPassword.module.css";
+import styles from "../InputPassword.module.scss";
+import classNames from "classnames";
 
 const LeftComponent = (showPassword: boolean) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -28,17 +29,17 @@ const LeftComponent = (showPassword: boolean) => {
 };
 
 const RightComponent = (showPassword: boolean, handlePress: () => void) => {
-  const Component: FC<SideComponentProps> = () => {
+  const Component: FC<SideComponentProps> = ({ hasError }) => {
     const { t } = useTranslation();
     const icon = showPassword ? faEye : faEyeSlash;
     const hide = showPassword ? "Hide" : "Unhide";
 
+    const buttonClasses = classNames(styles["button"], {
+      [styles["error"]]: hasError,
+    });
+
     return (
-      <Button.V2
-        className={styles["button"]}
-        type="button"
-        onPress={handlePress}
-      >
+      <Button.V2 className={buttonClasses} type="button" onPress={handlePress}>
         <FontAwesomeIcon icon={icon} />
         <span className={styles["button__text"]}>{t(hide)}</span>
       </Button.V2>
