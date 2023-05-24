@@ -24,7 +24,7 @@ const InputWrapper: FC<TInputEmailProps> = ({
 };
 
 const meta: Meta<typeof InputEmail> = {
-  title: "Components/Form/Input Email",
+  title: "Components/Form/Input Email/V1",
   component: InputEmail,
   args: {
     id: "input_text",

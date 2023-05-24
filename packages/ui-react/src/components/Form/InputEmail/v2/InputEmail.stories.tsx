@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../../constants";
-import InputText from "./";
+import InputEmail from "./";
 import { InputTemplateProps } from "../../InputTemplate/v2";
 
 const InputWrapper: FC<InputTemplateProps> = ({
@@ -18,14 +18,14 @@ const InputWrapper: FC<InputTemplateProps> = ({
 
   return (
     <div className="p-4">
-      <InputText value={inputValue} onChange={handleChange} {...rest} />
+      <InputEmail value={inputValue} onChange={handleChange} {...rest} />
     </div>
   );
 };
 
-const meta: Meta<typeof InputText> = {
-  title: "Components/Form/Input Text/V2",
-  component: InputText,
+const meta: Meta<typeof InputEmail> = {
+  title: "Components/Form/Input Email/V2",
+  component: InputEmail,
   args: {
     description: "",
     errorMessage: "",
@@ -62,7 +62,7 @@ const meta: Meta<typeof InputText> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputText>;
+type Story = StoryObj<typeof InputEmail>;
 
 export const Primary: Story = {
   render: (props) => <InputWrapper {...props} />,

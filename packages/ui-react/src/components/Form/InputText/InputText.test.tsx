@@ -13,7 +13,7 @@ jest.mock("../InputTemplate", () => {
   };
 });
 
-describe("<InputText />", () => {
+describe("<InputEmail />", () => {
   it("should render correctly", () => {
     const MockChange = jest.fn();
 
