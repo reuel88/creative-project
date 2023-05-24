@@ -13,7 +13,7 @@ jest.mock("../InputTemplate", () => {
   };
 });
 
-describe("<InputPassword />", () => {
+describe("<InputText />", () => {
   it("should render correctly", () => {
     const MockChange = jest.fn();
 

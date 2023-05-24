@@ -29,7 +29,7 @@ const InputWrapper: FC<TInputPasswordProps> = ({
 };
 
 const meta: Meta<typeof InputPasswordWithRequirements> = {
-  title: "Components/Form/Input Password/with Requirements",
+  title: "Components/Form/Input Password/V1/with Requirements",
   component: InputPasswordWithRequirements,
   args: {
     id: "input_text",
