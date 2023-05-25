@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../../constants";
-import InputText from "./";
+import InputTextComponent from "./";
 import { InputTemplateProps } from "../../InputTemplate/v2";
 
-const InputWrapper: FC<InputTemplateProps> = ({
+const InputText: FC<InputTemplateProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -18,14 +18,18 @@ const InputWrapper: FC<InputTemplateProps> = ({
 
   return (
     <div className="p-4">
-      <InputText value={inputValue} onChange={handleChange} {...rest} />
+      <InputTextComponent
+        value={inputValue}
+        onChange={handleChange}
+        {...rest}
+      />
     </div>
   );
 };
 
-const meta: Meta<typeof InputText> = {
+const meta: Meta<typeof InputTextComponent> = {
   title: "Components/Form/Input Text/V2",
-  component: InputText,
+  component: InputTextComponent,
   args: {
     description: "",
     errorMessage: "",
@@ -62,15 +66,15 @@ const meta: Meta<typeof InputText> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputText>;
+type Story = StoryObj<typeof InputTextComponent>;
 
 export const Primary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputText {...props} />,
   args: {},
 };
 
 export const Secondary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputText {...props} />,
   args: {
     variant: "secondary",
   },

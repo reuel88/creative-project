@@ -7,6 +7,7 @@ import { useHasError } from "../../../../hooks/useHasError";
 import Input from "../../Input";
 import Label from "../../Label";
 import styles from "../InputTemplate.module.scss";
+import ErrorMessage from "../../ErrorMessage";
 
 export type SideComponentProps = {
   className?: string;
@@ -106,17 +107,12 @@ const InputTemplate: FC<InputTemplateProps> = (props) => {
             />
           )}
         </div>
-        <div className={descriptionClasses} {...descriptionProps}>
-          {description}
-        </div>
-        {hasError && (
-          <div
-            className={styles["input-template__error-message"]}
-            {...errorMessageProps}
-          >
-            {errorMessage}
+        {description && (
+          <div className={descriptionClasses} {...descriptionProps}>
+            {description}
           </div>
         )}
+        <ErrorMessage errorMessage={errorMessage} {...errorMessageProps} />
       </div>
     </>
   );

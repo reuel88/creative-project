@@ -2,9 +2,9 @@ import { ChangeEvent, FC, RefAttributes, useState } from "react";
 import { ArgTypes, Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../constants";
 import argTypes from "../argTypes";
-import InputText, { TInputTextProps } from "./InputText";
+import InputTextComponent, { TInputTextProps } from "./InputText";
 
-const InputWrapper: FC<TInputTextProps> = ({
+const InputText: FC<TInputTextProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -18,14 +18,14 @@ const InputWrapper: FC<TInputTextProps> = ({
 
   return (
     <div className="p-4">
-      <InputText value={value} onChange={handleChange} {...rest} />
+      <InputTextComponent value={value} onChange={handleChange} {...rest} />
     </div>
   );
 };
 
-const meta: Meta<typeof InputText> = {
+const meta: Meta<typeof InputTextComponent> = {
   title: "Components/Form/Input Text/V1",
-  component: InputText,
+  component: InputTextComponent,
   args: {
     id: "input_text",
     label: "Input",
@@ -41,15 +41,15 @@ const meta: Meta<typeof InputText> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputText>;
+type Story = StoryObj<typeof InputTextComponent>;
 
 export const Primary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputText {...props} />,
   args: {},
 };
 
 export const Secondary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputText {...props} />,
   args: {
     variant: "secondary",
   },

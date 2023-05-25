@@ -119,7 +119,7 @@
   }
 
   &__description {
-    @apply text-sm py-1;
+    @apply text-sm mt-1;
 
     &.primary {
       @apply text-neutral-600 dark:text-neutral-400;
@@ -128,12 +128,5 @@
     &.secondary {
       @apply text-neutral-100;
     }
-  }
-
-  &__error-message {
-    @apply mt-2 px-3 py-2
-    bg-red-100
-    text-red-900 text-sm
-    rounded-md;
   }
 }

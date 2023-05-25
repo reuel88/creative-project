@@ -21,7 +21,7 @@ const argTypes = {
   },
   error: {
     type: { name: "string", required: true },
-    description: "Error string",
+    description: "ErrorMessage string",
     table: {
       type: {
         summary: "string",

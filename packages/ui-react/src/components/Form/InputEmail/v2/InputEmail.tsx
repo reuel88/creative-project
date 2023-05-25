@@ -1,6 +1,6 @@
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC } from "react";
+import { FC, memo } from "react";
 import InputTemplate from "../../InputTemplate";
 import { InputTemplateProps, SideComponentProps } from "../../InputTemplate/v2";
 
@@ -13,12 +13,14 @@ const LeftComponent: FC<SideComponentProps> = ({ hasError, ...rest }) => {
   );
 };
 
+const MemoLeftComponent = memo(LeftComponent);
+
 const InputEmail: FC<InputTemplateProps> = (props) => {
   return (
     <>
       <InputTemplate.V2
         type={"email"}
-        leftComponent={LeftComponent}
+        leftComponent={MemoLeftComponent}
         {...props}
       />
     </>
