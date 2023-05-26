@@ -1,13 +1,11 @@
 import { FC, Key, useMemo } from "react";
-import Select, { Item, SelectProps } from "./Select";
+import SelectTemplate, {
+  Item,
+  SelectOption,
+  SelectTemplateProps,
+} from "./SelectTemplate";
 
-export type SelectOption = {
-  value: string;
-  label: string;
-  disabled?: boolean;
-};
-
-export type InputSelectProps = SelectProps & {
+export type InputSelectProps = Omit<SelectTemplateProps, "children"> & {
   options: SelectOption[];
   value: string;
   onChange: (value: string) => void;
@@ -37,7 +35,7 @@ const InputSelect: FC<InputSelectProps> = ({
   };
 
   return (
-    <Select
+    <SelectTemplate
       items={options}
       selectedKey={value}
       onSelectionChange={handleChange}
@@ -45,7 +43,7 @@ const InputSelect: FC<InputSelectProps> = ({
       {...rest}
     >
       {(item) => <Item key={item.value}>{item.label}</Item>}
-    </Select>
+    </SelectTemplate>
   );
 };
 

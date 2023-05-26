@@ -1,0 +1,11 @@
+.description {
+  @apply text-sm mt-1;
+
+  &.primary {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+
+  &.secondary {
+    @apply text-neutral-100;
+  }
+}

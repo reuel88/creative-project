@@ -8,6 +8,8 @@ import Input from "../../Input";
 import Label from "../../Label";
 import styles from "../InputTemplate.module.scss";
 import ErrorMessage from "../../ErrorMessage";
+import Description from "../../Description";
+import { useContainerClasses } from "../../../../hooks/useContainerClasses";
 
 export type SideComponentProps = {
   className?: string;
@@ -37,6 +39,15 @@ const InputTemplate: FC<InputTemplateProps> = (props) => {
   const ref = useRef<HTMLInputElement>(null);
   const [hasError] = useHasError(errorMessage);
   const [isActive, activeProps] = useIsActive(props);
+  const {
+    containerTopClasses,
+    containerTopLeftClasses,
+    containerTopMiddleClasses,
+    containerTopRightClasses,
+  } = useContainerClasses({
+    errorMessage,
+    variant,
+  });
   const { descriptionProps, errorMessageProps, inputProps, labelProps } =
     useTextField(
       {
@@ -46,48 +57,15 @@ const InputTemplate: FC<InputTemplateProps> = (props) => {
       ref
     );
 
-  const containerTopClasses = classNames(
+  const templateContainerTopClasses = classNames(
     defaultContainerTopClasses,
-    styles["input-template__container-top"],
-    styles[variant],
-    {
-      [styles["error"]]: hasError,
-    }
-  );
-
-  const containerTopLeftClasses = classNames(
-    styles["input-template__container-top--left"],
-    styles[variant],
-    {
-      [styles["error"]]: hasError,
-    }
-  );
-
-  const containerTopMiddleClasses = classNames(
-    styles["input-template__container-top--middle"],
-    styles[variant],
-    {
-      [styles["error"]]: hasError,
-    }
-  );
-
-  const containerTopRightClasses = classNames(
-    styles["input-template__container-top--right"],
-    styles[variant],
-    {
-      [styles["error"]]: hasError,
-    }
-  );
-
-  const descriptionClasses = classNames(
-    styles["input-template__description"],
-    styles[variant]
+    containerTopClasses
   );
 
   return (
     <>
       <div className={styles["input-template__wrapper"]}>
-        <div className={containerTopClasses}>
+        <div className={templateContainerTopClasses}>
           {LeftComponent && (
             <LeftComponent
               className={containerTopLeftClasses}
@@ -107,11 +85,13 @@ const InputTemplate: FC<InputTemplateProps> = (props) => {
             />
           )}
         </div>
-        {description && (
-          <div className={descriptionClasses} {...descriptionProps}>
-            {description}
-          </div>
-        )}
+
+        <Description
+          description={description}
+          variant={variant}
+          {...descriptionProps}
+        />
+
         <ErrorMessage errorMessage={errorMessage} {...errorMessageProps} />
       </div>
     </>

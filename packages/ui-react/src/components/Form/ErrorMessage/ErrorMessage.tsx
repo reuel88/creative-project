@@ -13,9 +13,11 @@ const ErrorMessage: FC<ErrorMessageProps> = ({ errorMessage, ...rest }) => {
   if (!hasError) return null;
 
   return (
-    <div className={styles["error-message"]} {...rest}>
-      {errorMessage}
-    </div>
+    <>
+      <div className={styles["error-message"]} {...rest}>
+        {errorMessage}
+      </div>
+    </>
   );
 };
 

@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { ArgTypes, Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../../constants";
 import InputEmailComponent from "./";
 import { InputTemplateProps } from "../../InputTemplate/v2";
+import argTypes from "../../argTypes";
 
 const InputEmail: FC<InputTemplateProps> = ({
   value: defaultValue,
@@ -32,7 +33,7 @@ const meta: Meta<typeof InputEmailComponent> = {
   component: InputEmailComponent,
   args: {
     description: "",
-    errorMessage: "",
+    errorMessage: undefined,
     isDisabled: false,
     isReadOnly: false,
     isRequired: false,
@@ -42,26 +43,7 @@ const meta: Meta<typeof InputEmailComponent> = {
     variant: VARIANT.PRIMARY,
     onChange: (value) => console.log(value),
   },
-  argTypes: {
-    isDisabled: {
-      type: { name: "boolean", required: false },
-      table: {
-        defaultValue: { summary: false },
-      },
-    },
-    variant: {
-      type: { name: "string", required: false },
-      description: "Styling; mainly the color scheme",
-      options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
-      control: { type: "inline-radio" },
-      table: {
-        type: {
-          summary: `${VARIANT.PRIMARY} | ${VARIANT.SECONDARY}`,
-        },
-        defaultValue: { summary: VARIANT.PRIMARY },
-      },
-    },
-  },
+  argTypes: argTypes.V2 as Partial<ArgTypes<InputTemplateProps>>,
 };
 
 export default meta;

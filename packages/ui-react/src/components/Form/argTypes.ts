@@ -21,7 +21,7 @@ const argTypes = {
   },
   error: {
     type: { name: "string", required: true },
-    description: "ErrorMessage string",
+    description: "Error message string",
     table: {
       type: {
         summary: "string",
@@ -59,4 +59,37 @@ const argTypes = {
   },
 };
 
-export default argTypes;
+const V2 = {
+  errorMessage: {
+    type: { name: "string", required: false },
+    description: "Error message string",
+    table: {
+      type: {
+        summary: "string | undefined",
+      },
+    },
+  },
+  isDisabled: {
+    type: { name: "boolean", required: false },
+    table: {
+      defaultValue: { summary: false },
+    },
+  },
+  variant: {
+    type: { name: "string", required: false },
+    description: "Styling; mainly the color scheme",
+    options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
+    control: { type: "inline-radio" },
+    table: {
+      type: {
+        summary: `${VARIANT.PRIMARY} | ${VARIANT.SECONDARY}`,
+      },
+      defaultValue: { summary: VARIANT.PRIMARY },
+    },
+  },
+};
+
+export default Object.assign(argTypes, {
+  V1: argTypes,
+  V2,
+});
