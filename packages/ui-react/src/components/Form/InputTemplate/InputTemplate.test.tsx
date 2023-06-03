@@ -61,6 +61,25 @@ describe("<InputTemplate />", () => {
       expect(queryByText("Has Error")).not.toBeInTheDocument();
     });
 
+    // it("should have value equal to empty string", () => {
+    //   const { getByLabelText } = setup(
+    //     <TestingWrapper translations={{ Search: "Search" }}>
+    //       <InputTemplate
+    //         id={"hello"}
+    //         label={"world"}
+    //         name={"hello"}
+    //         type={"text"}
+    //         onChange={MockChange}
+    //       />
+    //     </TestingWrapper>
+    //   );
+    //
+    //   const input = getByLabelText("world");
+    //
+    //   expect(input).toBeInTheDocument();
+    //   expect(input.value).toBe("");
+    // });
+
     it("should have no error when null", () => {
       const { queryByText } = setup(
         <TestingWrapper translations={{ Search: "Search" }}>

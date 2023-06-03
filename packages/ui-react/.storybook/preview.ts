@@ -33,7 +33,7 @@ const preview: Preview = {
     },
     scheme: {
       name: "Scheme",
-      description: "SelectTemplate light or dark theme",
+      description: "Select light or dark theme",
       defaultValue: "both",
       toolbar: {
         icon: "mirror",

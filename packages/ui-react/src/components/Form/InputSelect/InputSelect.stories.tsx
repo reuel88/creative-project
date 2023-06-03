@@ -27,7 +27,7 @@ const InputSelect: FC<InputSelectProps> = ({
 };
 
 const meta: Meta<typeof InputSelectComponent> = {
-  title: "Components/Form/Input SelectTemplate",
+  title: "Components/Form/Input Select",
   component: InputSelectComponent,
   args: {
     description: "",

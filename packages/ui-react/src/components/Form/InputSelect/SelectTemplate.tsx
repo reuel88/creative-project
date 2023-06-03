@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { FC, useRef } from "react";
+import { FC, useRef, JSX } from "react";
 import {
   AriaSelectProps,
   HiddenSelect,
@@ -18,7 +18,7 @@ import ErrorMessage from "../ErrorMessage";
 import Label from "../Label";
 import ListBox from "./ListBox";
 import Popover from "./Popover";
-import styles from "./Select.module.scss";
+import styles from "./SelectTemplate.module.scss";
 
 export { Item } from "react-stately"; // export Item from react-stately
 
@@ -87,7 +87,12 @@ const SelectTemplate: FC<SelectTemplateProps> = (props) => {
         <div className={containerTopClasses}>
           {/* Left Component*/}
           <div className={selectContainerTopMiddleClasses}>
-            <Label.V2 {...labelProps} hasError={hasError} isActive={isActive}>
+            <Label.V2
+              as={"div" as unknown as JSX.IntrinsicElements}
+              hasError={hasError}
+              isActive={isActive}
+              {...labelProps}
+            >
               {label}
             </Label.V2>
             <HiddenSelect
@@ -110,8 +115,13 @@ const SelectTemplate: FC<SelectTemplateProps> = (props) => {
           {/* Right Component*/}
 
           {state.isOpen && (
-            <Popover state={state} triggerRef={ref} placement="bottom start">
-              <ListBox state={state} {...menuProps} />
+            <Popover
+              state={state}
+              triggerRef={ref}
+              placement="bottom start"
+              variant={variant}
+            >
+              <ListBox state={state} variant={variant} {...menuProps} />
             </Popover>
           )}
         </div>
