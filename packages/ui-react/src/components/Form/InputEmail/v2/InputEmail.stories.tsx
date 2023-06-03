@@ -1,10 +1,11 @@
 import { FC, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { ArgTypes, Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../../constants";
-import InputEmail from "./";
+import InputEmailComponent from "./";
 import { InputTemplateProps } from "../../InputTemplate/v2";
+import argTypes from "../../argTypes";
 
-const InputWrapper: FC<InputTemplateProps> = ({
+const InputEmail: FC<InputTemplateProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -18,17 +19,21 @@ const InputWrapper: FC<InputTemplateProps> = ({
 
   return (
     <div className="p-4">
-      <InputEmail value={inputValue} onChange={handleChange} {...rest} />
+      <InputEmailComponent
+        value={inputValue}
+        onChange={handleChange}
+        {...rest}
+      />
     </div>
   );
 };
 
-const meta: Meta<typeof InputEmail> = {
+const meta: Meta<typeof InputEmailComponent> = {
   title: "Components/Form/Input Email/V2",
-  component: InputEmail,
+  component: InputEmailComponent,
   args: {
     description: "",
-    errorMessage: "",
+    errorMessage: undefined,
     isDisabled: false,
     isReadOnly: false,
     isRequired: false,
@@ -38,39 +43,20 @@ const meta: Meta<typeof InputEmail> = {
     variant: VARIANT.PRIMARY,
     onChange: (value) => console.log(value),
   },
-  argTypes: {
-    isDisabled: {
-      type: { name: "boolean", required: false },
-      table: {
-        defaultValue: { summary: false },
-      },
-    },
-    variant: {
-      type: { name: "string", required: false },
-      description: "Styling; mainly the color scheme",
-      options: [VARIANT.PRIMARY, VARIANT.SECONDARY],
-      control: { type: "inline-radio" },
-      table: {
-        type: {
-          summary: `${VARIANT.PRIMARY} | ${VARIANT.SECONDARY}`,
-        },
-        defaultValue: { summary: VARIANT.PRIMARY },
-      },
-    },
-  },
+  argTypes: argTypes.V2 as Partial<ArgTypes<InputTemplateProps>>,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof InputEmail>;
+type Story = StoryObj<typeof InputEmailComponent>;
 
 export const Primary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputEmail {...props} />,
   args: {},
 };
 
 export const Secondary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputEmail {...props} />,
   args: {
     variant: "secondary",
   },

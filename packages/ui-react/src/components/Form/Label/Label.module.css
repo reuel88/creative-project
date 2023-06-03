@@ -1,7 +1,9 @@
 .label {
   @apply absolute
     top-1/2 -translate-y-1/2
-    transition duration-150 ease-out;
+    ltr:left-3 rtl:right-3
+    transition duration-150 ease-out
+    pointer-events-none;
 }
 
 .label--active {

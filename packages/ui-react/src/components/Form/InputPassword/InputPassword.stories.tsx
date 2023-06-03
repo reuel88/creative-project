@@ -2,9 +2,12 @@ import { ChangeEvent, FC, RefAttributes, useState } from "react";
 import { ArgTypes, Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../constants";
 import argTypes from "../argTypes";
-import InputPassword, { TInputPasswordProps } from "./InputPassword";
+import {
+  default as InputPasswordComponent,
+  TInputPasswordProps,
+} from "./InputPassword";
 
-const InputWrapper: FC<TInputPasswordProps> = ({
+const InputPassword: FC<TInputPasswordProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -18,14 +21,14 @@ const InputWrapper: FC<TInputPasswordProps> = ({
 
   return (
     <div className="p-4">
-      <InputPassword value={value} onChange={handleChange} {...rest} />
+      <InputPasswordComponent value={value} onChange={handleChange} {...rest} />
     </div>
   );
 };
 
-const meta: Meta<typeof InputPassword> = {
+const meta: Meta<typeof InputPasswordComponent> = {
   title: "Components/Form/Input Password/V1",
-  component: InputPassword,
+  component: InputPasswordComponent,
   args: {
     id: "input_text",
     label: "Input",
@@ -41,15 +44,15 @@ const meta: Meta<typeof InputPassword> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputPassword>;
+type Story = StoryObj<typeof InputPasswordComponent>;
 
 export const Primary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputPassword {...props} />,
   args: {},
 };
 
 export const Secondary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputPassword {...props} />,
   args: {
     variant: "secondary",
   },

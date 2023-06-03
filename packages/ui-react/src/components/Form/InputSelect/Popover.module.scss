@@ -1,0 +1,7 @@
+.popover {
+  @apply z-10 shadow-lg
+  border border-y-[1px] border-solid
+  border-neutral-400 dark:border-transparent
+  bg-neutral-100
+  rounded-md mt-1;
+}

@@ -1,0 +1,28 @@
+.option {
+  @apply flex items-center justify-between gap-2
+  m-1 py-2 px-2
+  rounded-md
+  text-sm text-gray-700
+  outline-none cursor-default;
+
+  &--focused,
+  &--selected {
+    @apply text-blue-500;
+  }
+
+  &--focused {
+    @apply bg-blue-100;
+  }
+
+  &--selected {
+    @apply font-bold;
+  }
+
+  &--disabled {
+    @apply opacity-75 cursor-not-allowed;
+  }
+
+  &__icon {
+    @apply w-5 h-5 text-blue-500;
+  }
+}

@@ -1,0 +1,26 @@
+.select-container {
+  &--top--middle {
+    @apply relative
+    border-y-[1px] border-solid
+    border-neutral-400 dark:border-transparent
+    text-neutral-900;
+
+    &.error {
+      @apply border-red-500;
+    }
+  }
+
+  &__button {
+    @apply appearance-none
+    min-w-[182px] min-h-[50px]
+    flex grow gap-2
+    pb-2 pt-5 px-3
+    font-sans
+    text-sm;
+
+    &:focus,
+    &:focus-visible {
+      @apply outline-none;
+    }
+  }
+}

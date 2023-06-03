@@ -1,9 +1,7 @@
-.input-template {
-  &__wrapper {
-    @apply flex flex-col grow;
-  }
+.container {
+  @apply flex flex-col grow;
 
-  &__container-top {
+  &--top {
     @apply flex grow
     rounded-md
     bg-neutral-100;
@@ -20,9 +18,9 @@
       }
 
       &:hover {
-        & .input-template__container-top--left,
-        & .input-template__container-top--middle,
-        & .input-template__container-top--right {
+        & .container-top--left,
+        & .container-top--middle,
+        & .container-top--right {
           @apply border-blue-500;
         }
       }
@@ -35,9 +33,9 @@
       }
 
       &:hover {
-        & .input-template__container-top--left,
-        & .input-template__container-top--middle,
-        & .input-template__container-top--right {
+        & .container-top--left,
+        & .container-top--middle,
+        & .container-top--right {
           @apply border-neutral-100;
         }
       }
@@ -50,9 +48,9 @@
       }
 
       &:hover {
-        & .input-template__container-top--left,
-        & .input-template__container-top--middle,
-        & .input-template__container-top--right {
+        & .container-top--left,
+        & .container-top--middle,
+        & .container-top--right {
           @apply border-red-500;
         }
       }
@@ -111,22 +109,6 @@
       &.error {
         @apply border-red-500;
       }
-    }
-  }
-
-  &__description {
-    @apply text-sm;
-  }
-
-  &__description {
-    @apply text-sm mt-1;
-
-    &.primary {
-      @apply text-neutral-600 dark:text-neutral-400;
-    }
-
-    &.secondary {
-      @apply text-neutral-100;
     }
   }
 }

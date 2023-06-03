@@ -13,9 +13,32 @@ const meta: Meta<typeof Button> = {
     onPress: () => console.log("Press"),
   },
   argTypes: {
+    children: {
+      type: { name: "string", required: true },
+      table: {
+        type: {
+          summary: "ReactNode",
+        },
+        defaultValue: { summary: "undefined" },
+      },
+    },
+    className: {
+      type: { name: "string", required: false },
+      description: "HTML class name",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: { summary: "" },
+      },
+    },
     isDisabled: {
       type: { name: "boolean", required: false },
+      description: "Disable Button",
       table: {
+        type: {
+          summary: "boolean",
+        },
         defaultValue: { summary: false },
       },
     },
@@ -33,6 +56,7 @@ const meta: Meta<typeof Button> = {
     },
     onPress: {
       type: { name: "function", required: true },
+      description: "Used instead on onClick",
       table: {
         type: {
           summary: "() => void",

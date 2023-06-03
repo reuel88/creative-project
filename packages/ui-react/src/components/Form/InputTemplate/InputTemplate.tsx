@@ -48,7 +48,7 @@ const InputTemplate = forwardRef<HTMLInputElement, IInputTemplateProps>(
       leftComponent: LeftComponent,
       rightComponent: RightComponent,
       placeholder,
-      value = "",
+      value,
       variant = VARIANT.PRIMARY,
       onBlur,
       onChange,

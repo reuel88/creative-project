@@ -1,10 +1,9 @@
-import { FC, useState } from "react";
+import InputSelectComponent, { InputSelectProps } from "./InputSelect";
 import { Meta, StoryObj } from "@storybook/react";
-import { VARIANT } from "../../../../constants";
-import InputPasswordComponent from "./";
-import { InputTemplateProps } from "../../InputTemplate/v2";
+import { FC, useState } from "react";
+import { VARIANT } from "../../../constants";
 
-const InputPassword: FC<InputTemplateProps> = ({
+const InputSelect: FC<InputSelectProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -18,7 +17,7 @@ const InputPassword: FC<InputTemplateProps> = ({
 
   return (
     <div className="p-4">
-      <InputPasswordComponent
+      <InputSelectComponent
         value={inputValue}
         onChange={handleChange}
         {...rest}
@@ -27,17 +26,21 @@ const InputPassword: FC<InputTemplateProps> = ({
   );
 };
 
-const meta: Meta<typeof InputPasswordComponent> = {
-  title: "Components/Form/Input Password/V2",
-  component: InputPasswordComponent,
+const meta: Meta<typeof InputSelectComponent> = {
+  title: "Components/Form/Input Select",
+  component: InputSelectComponent,
   args: {
     description: "",
     errorMessage: "",
     isDisabled: false,
-    isReadOnly: false,
-    isRequired: false,
     label: "Input",
-    name: "input",
+    options: [
+      { value: "1", label: "Durward Reynolds" },
+      { value: "2", label: "Kenton Towne" },
+      { value: "3", label: "Therese Wunsch" },
+      { value: "4", label: "Benedict Kessler", disabled: true },
+      { value: "5", label: "Katelyn Rohan" },
+    ],
     value: "",
     variant: VARIANT.PRIMARY,
     onChange: (value) => console.log(value),
@@ -66,16 +69,15 @@ const meta: Meta<typeof InputPasswordComponent> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputPasswordComponent>;
+type Story = StoryObj<typeof InputSelectComponent>;
 
 export const Primary: Story = {
-  render: (props) => <InputPassword {...props} />,
-  args: {},
+  render: (args) => <InputSelect {...args} />,
 };
 
 export const Secondary: Story = {
-  render: (props) => <InputPassword {...props} />,
+  render: (args) => <InputSelect {...args} />,
   args: {
-    variant: "secondary",
+    variant: VARIANT.SECONDARY,
   },
 };

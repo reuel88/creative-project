@@ -2,9 +2,9 @@ import { ChangeEvent, FC, RefAttributes, useState } from "react";
 import { ArgTypes, Meta, StoryObj } from "@storybook/react";
 import { VARIANT } from "../../../constants";
 import argTypes from "../argTypes";
-import InputEmail, { TInputEmailProps } from "./InputEmail";
+import { default as InputEmailComponent, TInputEmailProps } from "./InputEmail";
 
-const InputWrapper: FC<TInputEmailProps> = ({
+const InputEmail: FC<TInputEmailProps> = ({
   value: defaultValue,
   onChange,
   ...rest
@@ -18,14 +18,14 @@ const InputWrapper: FC<TInputEmailProps> = ({
 
   return (
     <div className="p-4">
-      <InputEmail value={value} onChange={handleChange} {...rest} />
+      <InputEmailComponent value={value} onChange={handleChange} {...rest} />
     </div>
   );
 };
 
-const meta: Meta<typeof InputEmail> = {
+const meta: Meta<typeof InputEmailComponent> = {
   title: "Components/Form/Input Email/V1",
-  component: InputEmail,
+  component: InputEmailComponent,
   args: {
     id: "input_text",
     label: "Input",
@@ -41,15 +41,15 @@ const meta: Meta<typeof InputEmail> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputEmail>;
+type Story = StoryObj<typeof InputEmailComponent>;
 
 export const Primary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputEmail {...props} />,
   args: {},
 };
 
 export const Secondary: Story = {
-  render: (props) => <InputWrapper {...props} />,
+  render: (props) => <InputEmail {...props} />,
   args: {
     variant: VARIANT.SECONDARY,
   },

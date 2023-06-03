@@ -1,17 +1,28 @@
 import { FocusEvent, useEffect, useState } from "react";
 import { InputTemplateProps } from "../components/Form/InputTemplate/v2";
+import { SelectTemplateProps } from "../components/Form/InputSelect/SelectTemplate";
 
 type useIsActiveHook = (
-  props: InputTemplateProps
-) => [boolean, InputTemplateProps];
+  props: InputTemplateProps | SelectTemplateProps
+) => [boolean, InputTemplateProps | SelectTemplateProps];
 
 export const useIsActive: useIsActiveHook = (props) => {
   const [flagActive, setFlagActive] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
+  let value = "";
+
+  if ("value" in props) {
+    value = props.value || "";
+  }
+
+  if ("selectedKey" in props) {
+    value = (props.selectedKey as string) || "";
+  }
+
   useEffect(() => {
-    !flagActive && setIsActive((props?.value || "").trim().length > 0);
-  }, [flagActive, isActive, props.value]);
+    !flagActive && setIsActive(value.trim().length > 0);
+  }, [flagActive, isActive, value]);
 
   const activeProps = {
     ...props,

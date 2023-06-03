@@ -67,7 +67,7 @@ const SignInForm = () => {
           <footer className={styles["form__footer"]}>
             <p className={styles["form__footer--end"]}>
               <Trans i18nKey={"Don't have an account"}>
-                Don't have an account?{" "}
+                Don't have an account?
                 <Link href={"https://google.com"}>Sign up</Link>
               </Trans>
             </p>
