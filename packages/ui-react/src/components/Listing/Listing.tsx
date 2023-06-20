@@ -3,8 +3,9 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Card } from "../Card";
 import { useListingContext, withListing } from "./_ListingContext";
-import ViewControl from "./ViewControl";
 import styles from "./Listing.module.css";
+import Breadcrumbs from "../Breadcrumbs";
+import ViewSort from "./ViewSort";
 
 const Listing: FC = () => {
   const { t } = useTranslation();
@@ -21,9 +22,20 @@ const Listing: FC = () => {
   return (
     <section className={styles["listing"]}>
       <header className={styles["listing__header"]}>
-        <h2 className={styles["listing__title"]}>{title}</h2>
-        <ViewControl />
-        <div>{t("Sort By")} :</div>
+        <div>
+          <Breadcrumbs>
+            <Breadcrumbs.Item href="/">
+            <span>{t("Home")}</span>
+              </Breadcrumbs.Item>
+            <Breadcrumbs.Item>
+            <span>{t("Listing")}</span>
+</Breadcrumbs.Item>
+          </Breadcrumbs>
+        </div>
+        <div>
+          <h2 className={styles["listing__title"]}>{title}</h2>
+        </div>
+        <ViewSort />
       </header>
       <div className={styles["listing__content"]}>
         <ul className={listClasses}>

@@ -12,7 +12,7 @@ export type InputSelectProps = Omit<SelectTemplateProps, "children"> & {
 };
 
 const InputSelect: FC<InputSelectProps> = ({
-  options,
+  options = [],
   value,
   onChange,
   ...rest

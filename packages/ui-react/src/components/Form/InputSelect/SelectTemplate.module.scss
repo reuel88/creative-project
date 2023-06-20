@@ -1,6 +1,7 @@
 .select-container {
   &--top--middle {
     @apply relative
+    grow
     border-y-[1px] border-solid
     border-neutral-400 dark:border-transparent
     text-neutral-900;

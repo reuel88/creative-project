@@ -4,7 +4,7 @@
 }
 
 .view-control__label {
-  @apply pl-1 inline-block md:hidden;
+  @apply inline-block md:hidden;
 }
 
 .view-control__button {

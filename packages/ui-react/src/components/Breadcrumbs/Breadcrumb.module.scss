@@ -1,0 +1,19 @@
+.breadcrumb {
+  @apply flex items-center gap-1
+  text-sm
+  text-neutral-600 dark:text-neutral-400;
+}
+
+.breadcrumb__link {
+  &:hover {
+    @apply text-blue-500;
+  }
+
+  &:focus{
+    @apply text-blue-500 outline-none underline;
+  }
+}
+
+.breadcrumb__icon {
+  @apply text-neutral-400 dark:text-neutral-600
+}

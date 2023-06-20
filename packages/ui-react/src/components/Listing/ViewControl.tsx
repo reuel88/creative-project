@@ -36,7 +36,6 @@ const ViewControl = () => {
 
   return (
     <div className={styles["view-control"]}>
-      <span className={styles["view-control__label"]}>{t("View")}:</span>
       <button className={listButtonClasses} onClick={handleClick("list")}>
         <FontAwesomeIcon icon={faList} />
         <span className={styles["view-control__button__text"]}>

@@ -1,0 +1,10 @@
+.underlay {
+  @apply fixed inset-0
+    z-10
+  flex justify-center
+  bg-neutral-900/50;
+}
+
+.modal{
+  @apply w-full;
+}

@@ -17,7 +17,7 @@ const Button: FC<ButtonProps> = (props) => {
   const buttonClasses = classNames(styles.button, styles[variant], className);
 
   return (
-    <button {...buttonProps} className={buttonClasses} ref={ref}>
+    <button className={buttonClasses} ref={ref} {...buttonProps}>
       {children}
     </button>
   );
