@@ -13,8 +13,12 @@ type Story = StoryObj<typeof Breadcrumbs>;
 export const Default: Story = {
   render: () => (
     <Breadcrumbs>
-      <Breadcrumbs.Item href="/"><span>Home</span></Breadcrumbs.Item>
-      <Breadcrumbs.Item href="/"><span>Search</span></Breadcrumbs.Item>
+      <Breadcrumbs.Item href="/">
+        <span>Home</span>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Item href="/">
+        <span>Search</span>
+      </Breadcrumbs.Item>
       <Breadcrumbs.Item>
         <span>Reuel</span>
       </Breadcrumbs.Item>

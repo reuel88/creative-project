@@ -2,7 +2,7 @@
   @apply flex items-center justify-between
   w-full;
 
-  &__button{
+  &__button {
     @apply flex items-center gap-1
     text-neutral-700 dark:text-neutral-300;
   }

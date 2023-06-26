@@ -25,11 +25,11 @@ const Listing: FC = () => {
         <div>
           <Breadcrumbs>
             <Breadcrumbs.Item href="/">
-            <span>{t("Home")}</span>
-              </Breadcrumbs.Item>
+              <span>{t("Home")}</span>
+            </Breadcrumbs.Item>
             <Breadcrumbs.Item>
-            <span>{t("Listing")}</span>
-</Breadcrumbs.Item>
+              <span>{t("Listing")}</span>
+            </Breadcrumbs.Item>
           </Breadcrumbs>
         </div>
         <div>

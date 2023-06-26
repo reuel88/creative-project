@@ -9,11 +9,11 @@
     @apply text-blue-500;
   }
 
-  &:focus{
+  &:focus {
     @apply text-blue-500 outline-none underline;
   }
 }
 
 .breadcrumb__icon {
-  @apply text-neutral-400 dark:text-neutral-600
+  @apply text-neutral-400 dark:text-neutral-600;
 }

@@ -23,7 +23,7 @@
   "homepage": "https://github.com/reuel88/creative-project#readme",
   "devDependencies": {
     "husky": "^8.0.3",
-    "lerna": "^6.6.2"
+    "lerna": "^7.0.2"
   },
   "workspaces": [
     "packages/*"

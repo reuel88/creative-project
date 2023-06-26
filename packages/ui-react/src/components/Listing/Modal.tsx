@@ -5,8 +5,8 @@ import styles from "./Modal.module.scss";
 import { OverlayTriggerState } from "react-stately";
 
 type ModalProps = AriaModalOverlayProps & {
-  children: ReactNode; 
-  state: OverlayTriggerState; 
+  children: ReactNode;
+  state: OverlayTriggerState;
 };
 
 const Modal: FC<ModalProps> = (props) => {

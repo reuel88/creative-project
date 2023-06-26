@@ -7,9 +7,9 @@ describe("<Breadcrumbs />", () => {
       <Breadcrumbs>
         <Breadcrumbs.Item href="/">
           <span>Home</span>
-          </Breadcrumbs.Item>
+        </Breadcrumbs.Item>
         <Breadcrumbs.Item>
-        <span>Listing</span>
+          <span>Listing</span>
         </Breadcrumbs.Item>
       </Breadcrumbs>
     );

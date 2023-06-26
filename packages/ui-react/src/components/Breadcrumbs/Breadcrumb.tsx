@@ -7,7 +7,7 @@ import styles from "./Breadcrumb.module.scss";
 type BreadcrumbProps = AriaBreadcrumbItemProps & {
   children: JSX.Element | JSX.Element[];
   href?: string;
-}
+};
 
 const Breadcrumb: FC<BreadcrumbProps> = (props) => {
   const { children, isCurrent, href } = props;

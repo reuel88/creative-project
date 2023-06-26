@@ -4,7 +4,7 @@ import styles from "./Breadcrumbs.module.scss";
 
 type BreadcrumbsProps = AriaBreadcrumbsProps & {
   children: JSX.Element | JSX.Element[];
-}
+};
 
 const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
   const { children } = props;

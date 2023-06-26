@@ -1,32 +1,31 @@
 .listing {
-    @apply p-0 mb-6
+  @apply p-0 mb-6
     mx-auto
     w-auto max-w-sm md:max-w-xl lg:max-w-7xl;
 }
 
 .listing__header {
-    @apply
-    w-full
+  @apply w-full
     px-4 mb-1;
 }
 
 .listing__title {
-    @apply text-neutral-900 dark:text-neutral-100
+  @apply text-neutral-900 dark:text-neutral-100
     text-2xl
     font-bold;
 }
 
 .listing__content {
-    @apply px-4;
+  @apply px-4;
 }
 
 .list {
-    @apply flex flex-col gap-4
+  @apply flex flex-col gap-4
     p-0 m-0;
 }
 
 .list--grid {
-    @apply grid grid-cols-2 gap-2
+  @apply grid grid-cols-2 gap-2
     md:grid-cols-3 md:gap-4
     lg:grid-cols-5 lg:gap-6;
 }
